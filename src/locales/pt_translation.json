@@ -5,5 +5,8 @@
         "experience": "Experiência",
         "projects": "Projetos",
         "contact": "Contato"
+    },
+    "footer": {
+        "copyright": "© 2025 Marcos Wiendl. Todos os direitos reservados."
     }
 }
