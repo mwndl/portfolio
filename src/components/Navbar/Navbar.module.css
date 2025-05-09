@@ -52,6 +52,9 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+  }
   .navLinks {
     display: none; /* Hide links on mobile */
   }
