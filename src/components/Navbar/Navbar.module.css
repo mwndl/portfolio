@@ -1,0 +1,58 @@
+.navbar {
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 80%; 
+  max-width: 1200px; 
+  margin: 1rem auto; 
+  border-radius: 18px; 
+}
+
+.navbar:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.navbarBrand {
+  display: flex;
+  align-items: center;
+}
+
+.brandLink {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.link {
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #ff7f50;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Hide links on mobile */
+  }
+}

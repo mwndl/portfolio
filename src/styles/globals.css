@@ -1,0 +1,29 @@
+/* src/styles/styles.css */
+
+/* Estilo para a Navbar */
+nav {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  nav:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilo para links */
+  nav a {
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ff7f50; /* Cor laranja para hover */
+  }
+  
+  /* Estilo para o botão de alternância de tema */
+  button {
+    transition: transform 0.3s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
