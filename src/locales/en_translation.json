@@ -10,8 +10,17 @@
         "copyright": "© 2025 Marcos Wiendl. All rights reserved."
     },
     "aboutMe": {
+        "name": "Marcos Wiendl",
+        "role": "Full Stack Developer",
         "title": "About Me",
-        "paragraph1": "Hello! I'm Marcos Wiendl, a full stack developer focused on creating digital solutions that combine intuitive interfaces with robust back-ends. I enjoy solving problems with creativity and delivering real value to users.",
+        "paragraph1": "Hello! I'm Marcos, a full stack developer focused on creating digital solutions that combine intuitive interfaces with robust back-ends. I enjoy solving problems with creativity and delivering real value to users.",
         "paragraph2": "I'm a graduate in Internet Systems and currently pursuing an MBA in Full Stack Web Development. I'm always evolving. In my free time, I explore new technologies, create personal projects, and follow industry trends."
+    },
+    "shortcuts": {
+        "resume": "Resume",
+        "resume_url": "https://docs.google.com/document/d/1rZlT7FwUL5cEzEnjDiTvlacrUtGhkNRIUZw0WHSW9O8/edit?usp=sharing",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "email": "Email"
     }
 }
