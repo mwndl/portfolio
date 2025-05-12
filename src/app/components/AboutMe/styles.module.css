@@ -1,48 +1,76 @@
 .section {
-    
 }
 
 .container {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #000000;
-  border-radius: 18px;
-  padding: 2rem;
+  margin-bottom: 1rem;
 }
 
 .title {
   font-size: 2.25rem;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   margin-bottom: 2rem;
+  color: #ff7f50;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  align-items: stretch;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .imageContainer {
-  width: 100%;
+  width: 320px; /* Fixed width based on imageWrapper + padding */
+  min-width: 320px; /* Prevents shrinking */
+  background-color: #000000;
+  border-radius: 18px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-width: unset;
 }
 
 .imageWrapper {
   position: relative;
   width: 16rem;
   height: 16rem;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .image {
   border-radius: 16px;
   object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.role {
+  font-size: 1rem;
+  text-align: center;
+  color: #c0c0c0;
 }
 
 .textContainer {
-  width: 100%;
+  flex: 1;
+  background-color: #000000;
+  border-radius: 18px;
+  padding: 2rem;
 }
 
 .paragraph {
@@ -51,26 +79,21 @@
   margin-bottom: 1rem;
 }
 
-@media (min-width: 1040px) {
-    .content {
-      flex-direction: row;
-    }
-  
-    .imageContainer {
-      width: 33.333333%;
-    }
-  
-    .textContainer {
-      width: 66.666667%;
-    }
-  } 
-
 @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+
     .imageWrapper {
       margin-bottom: 1.5rem;
     }
 
     .container {
       width: 95%;
+    }
+
+    .imageContainer {
+      width: 100%;
+      min-width: unset;
     }
 }
