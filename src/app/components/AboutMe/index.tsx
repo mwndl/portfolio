@@ -24,6 +24,8 @@ export default function AboutMe() {
                 <Image
                 src="https://www.gravatar.com/avatar/d87fbc718cafb7c4a7ce26efd1f227cc?s=1920"
                 placeholder="blur"
+                width={1920}
+                height={1920}
                 blurDataURL={PROFILE_BLUR_DATA}
                 alt="Profile picture"
                 priority
