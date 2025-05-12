@@ -1,4 +1,5 @@
 import AboutMe from './components/AboutMe';
+import Shortcuts from './components/Shortcuts';
 /*
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <AboutMe />
+      <Shortcuts />
       {/*
       <Skills />
       <Experience />
