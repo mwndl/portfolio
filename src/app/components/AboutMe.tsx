@@ -3,18 +3,20 @@
 import Image from 'next/image';
 import styles from './AboutMe.module.css';
 import TypewriterText from '../../components/TypewriterText/TypewriterText';
+import { useTranslation } from 'react-i18next';
 
 export default function AboutMe() {
-  
+    const { t } = useTranslation();
+
     const paragraphs = [
-        "Olá! Sou Marcos Wiendl, desenvolvedor full stack focado em criar soluções digitais que unem interfaces intuitivas a back-ends robustos. Gosto de resolver problemas com criatividade e entregar valor real aos usuários.",
-        "Formado em Sistemas para Internet e cursando MBA em Full Stack Web Development, estou sempre evoluindo. No tempo livre, exploro novas tecnologias, crio projetos pessoais e acompanho as tendências do setor."
+        t('aboutMe.paragraph1'),
+        t('aboutMe.paragraph2'),
     ];
       
     return (
     <section id="about" className={styles.section}>
         <div className={styles.container}>
-        <h2 className={styles.title}>About Me</h2>
+        <h2 className={styles.title}>{t('aboutMe.title')}</h2>
         <div className={styles.content}>
             <div className={styles.imageContainer}>
             <div className={styles.imageWrapper}>

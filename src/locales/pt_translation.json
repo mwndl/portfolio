@@ -8,5 +8,10 @@
     },
     "footer": {
         "copyright": "© 2025 Marcos Wiendl. Todos os direitos reservados."
+    },
+    "aboutMe": {
+        "title": "Sobre Mim",
+        "paragraph1": "Olá! Sou Marcos Wiendl, desenvolvedor full stack focado em criar soluções digitais que unem interfaces intuitivas a back-ends robustos. Gosto de resolver problemas com criatividade e entregar valor real aos usuários.",
+        "paragraph2": "Formado em Sistemas para Internet e cursando MBA em Full Stack Web Development, estou sempre evoluindo. No tempo livre, exploro novas tecnologias, crio projetos pessoais e acompanho as tendências do setor."
     }
 }
