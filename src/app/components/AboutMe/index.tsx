@@ -22,12 +22,10 @@ export default function AboutMe() {
             <div className={styles.imageContainer}>
             <div className={styles.imageWrapper}>
                 <Image
-                src="https://www.gravatar.com/avatar/d87fbc718cafb7c4a7ce26efd1f227cc"
+                src="https://www.gravatar.com/avatar/d87fbc718cafb7c4a7ce26efd1f227cc?s=1920"
                 placeholder="blur"
                 blurDataURL={PROFILE_BLUR_DATA}
                 alt="Profile picture"
-                width={500}
-                height={500}
                 priority
                 className={styles.image}
                 />
