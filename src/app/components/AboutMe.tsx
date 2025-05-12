@@ -19,7 +19,7 @@ export default function AboutMe() {
             <div className={styles.imageContainer}>
             <div className={styles.imageWrapper}>
                 <Image
-                src="/profile_picture.jpeg"
+                src="/images/profile_picture.jpeg"
                 alt="Profile picture"
                 fill
                 className={styles.image}
