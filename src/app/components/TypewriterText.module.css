@@ -1,0 +1,22 @@
+.container {
+  line-height: 1.75;
+}
+
+.word {
+  color: #4B5563; /* Cor cinza para palavras não lidas */
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.highlighted {
+  color: #ffffff; /* Cor branca para palavras lidas */
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+} 
