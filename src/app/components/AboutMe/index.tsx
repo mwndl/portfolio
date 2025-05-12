@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import styles from './AboutMe.module.css';
+import styles from './styles.module.css';
 import TypewriterText from '../../../components/TypewriterText/TypewriterText';
 import { useTranslation } from 'react-i18next';
 
