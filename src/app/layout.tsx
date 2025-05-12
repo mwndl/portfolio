@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Marcos Wiendl • Portfólio',
-  description: 'Desenvolvedor full-stack especializado em React, Next.js e Spring Boot.',
+  title: 'Marcos Wiendl • Portfolio',
+  description: 'Full-stack developer specialized in React, Next.js and Spring Boot.',
 };
 
 export default function RootLayout({
@@ -16,9 +16,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
-    <html lang="pt-br" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
