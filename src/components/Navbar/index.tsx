@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import styles from './Navbar.module.css';
-import LanguageToggle from '../LanguageToggler/LanguageToggler';
+import styles from './styles.module.css';
+import LanguageToggle from '../LanguageToggler';
 
 const Navbar = () => {
   const { t } = useTranslation();
