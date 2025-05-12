@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="min-h-screen px-4 sm:px-8 py-6">{children}</main>
+          <main className="min-h-screen py-4">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
