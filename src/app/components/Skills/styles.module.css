@@ -24,26 +24,98 @@
     background-color: #000;
     padding: 2rem;
     border-radius: 1rem;
+    opacity: 0;
 }
 
-.title {
+.skillsContainer .title,
+.skillsContainer .skill {
+    opacity: 0;
+    transform: translateY(25px); /* Definindo o estado inicial */
+}
+
+.skillsContainer .title,
+.skillsContainer .skill {
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.skillsContainer .title {
     font-size: 2.0rem;
     font-weight: bold;
     color: #ff7f50;
     margin-bottom: 1rem;
 }
 
-.skill {
+.skillsContainer .skill {
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
     color: #c0c0c0;
+}
+
+.skillsContainer .skill:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.skillsContainer .skill:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.skillsContainer .skill:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.skillsContainer .skill:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.skillsContainer.visible .title,
+.skillsContainer.visible .skill {
+    opacity: 1;
+    transform: translateY(0); /* Aplica animação quando a classe visible for adicionada */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fadeInUp {
+    transform: translateY(25px);
+    animation: fadeInUp 1s ease-in-out forwards;
 }
 
 @media (max-width: 1170px) {
     .container {
         flex-direction: column;
     }
-}   
+}
 
 @media (max-width: 768px) {
     .container {

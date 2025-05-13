@@ -2,41 +2,55 @@
 
 import styles from './styles.module.css';
 import { useTranslation } from 'react-i18next';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 export default function Skills() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
+  const [containerRef, isVisible] = useIntersectionObserver();
 
-    return (
+  const skillsSections = [
+    { titleKey: 'a_title', skillsKeys: ['a1', 'a2', 'a3', 'a4'] },
+    { titleKey: 'b_title', skillsKeys: ['b1', 'b2', 'b3', 'b4'] },
+    { titleKey: 'c_title', skillsKeys: ['c1', 'c2', 'c3', 'c4'] },
+  ];
+
+  console.log('skills visible: ', isVisible);
+
+  return (
     <section id="skills" className={styles.section}>
-        <div className={styles.container}>
-            <div className={styles.skillsContainer}>
-                <h2 className={styles.title}>{t('skills.a_title')}</h2>
-                <div className={styles.skills}>
-                    <h3 className={styles.skill}>{t('skills.a1')}</h3>
-                    <h3 className={styles.skill}>{t('skills.a2')}</h3>
-                    <h3 className={styles.skill}>{t('skills.a3')}</h3>
-                    <h3 className={styles.skill}>{t('skills.a4')}</h3>
-                </div>
+      <div ref={containerRef} className={`${styles.container} ${isVisible ? styles.visible : ''}`}>
+        {skillsSections.map((section, sectionIndex) => {
+          const sectionDelay = 0.2 + sectionIndex * 0.2; // Delays em cascata para cada seção
+          return (
+            <div
+              key={section.titleKey}
+              className={`${styles.skillsContainer} ${isVisible ? styles.fadeInUp : ''}`} // Adiciona fadeInUp condicionalmente
+              style={{ animationDelay: `${sectionDelay}s` }} // Delay da seção
+            >
+              <h2
+                className={`${styles.title} ${isVisible ? styles.fadeInUp : ''}`} // Animação condicional para o título
+                style={{ animationDelay: `${sectionDelay}s` }}
+              >
+                {t(`skills.${section.titleKey}`)}
+              </h2>
+              <div className={styles.skills}>
+                {section.skillsKeys.map((skillKey, skillIndex) => {
+                  const skillDelay = sectionDelay + 0.2 + skillIndex * 0.2; // Delay progressivo para cada skill
+                  return (
+                    <h3
+                      key={skillKey}
+                      className={`${styles.skill} ${isVisible ? styles.fadeInUp : ''}`} // Animação condicional para a skill
+                      style={{ animationDelay: `${skillDelay}s` }}
+                    >
+                      {t(`skills.${skillKey}`)}
+                    </h3>
+                  );
+                })}
+              </div>
             </div>
-            <div className={styles.skillsContainer}>
-                <h2 className={styles.title}>{t('skills.b_title')}</h2>
-                <div className={styles.skills}>
-                    <h3 className={styles.skill}>{t('skills.b1')}</h3>
-                    <h3 className={styles.skill}>{t('skills.b2')}</h3>
-                    <h3 className={styles.skill}>{t('skills.b3')}</h3>
-                    <h3 className={styles.skill}>{t('skills.b4')}</h3>
-                </div>
-            </div>
-            <div className={styles.skillsContainer}>
-                <h2 className={styles.title}>{t('skills.c_title')}</h2>
-                <div className={styles.skills}>
-                    <h3 className={styles.skill}>{t('skills.c1')}</h3>
-                    <h3 className={styles.skill}>{t('skills.c2')}</h3>
-                    <h3 className={styles.skill}>{t('skills.c3')}</h3>
-                    <h3 className={styles.skill}>{t('skills.c4')}</h3>
-                </div>
-            </div>
-        </div>
+          );
+        })}
+      </div>
     </section>
-    );
-} 
+  );
+}
