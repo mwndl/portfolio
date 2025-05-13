@@ -15,6 +15,15 @@
     gap: 0.5rem;
 }
 
+.shortcutsLeft, .shortcutsRight {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
 .shortcut {
     flex: 1;
     font-size: 1.2rem;
@@ -30,4 +39,23 @@
 .shortcut:hover {
     background-color: #e8541e;
     scale: 1.05;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .shortcutsLeft, .shortcutsRight {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    .shortcut {
+        width: 100%;
+    }
 }
