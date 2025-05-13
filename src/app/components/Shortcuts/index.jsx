@@ -3,11 +3,11 @@
 import styles from './styles.module.css';
 import { useTranslation } from 'react-i18next';
 
-export default function AboutMe() {
+export default function Shortcuts() {
     const { t } = useTranslation();
 
     return (
-    <section id="about" className={styles.section}>
+    <section id="shortcuts" className={styles.section}>
         <div className={styles.container}>
             <div className={styles.shortcutsLeft}>
                 <a className={styles.shortcut} href={t('shortcuts.resume_url')} target="_blank">{t('shortcuts.resume')}</a>
