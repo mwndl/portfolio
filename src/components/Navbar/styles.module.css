@@ -12,10 +12,8 @@
   max-width: 1200px; 
   margin: 1rem auto;
   border-radius: 18px; 
-}
-
-.navbar:hover {
-  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  animation: fadeInDown 1s ease-in-out forwards;
 }
 
 .navbarBrand {
@@ -41,6 +39,29 @@
   align-items: center;
 }
 
+.navLinks, .languageToggle, .link {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0.2s forwards;
+}
+
+.navLinks > :nth-child(1) {
+  animation-delay: 0.1s;
+}
+.navLinks > :nth-child(2) {
+  animation-delay: 0.2s;
+}
+.navLinks > :nth-child(3) {
+  animation-delay: 0.3s;
+}
+.navLinks > :nth-child(4) {
+  animation-delay: 0.4s;
+}
+.languageToggle {
+  animation-delay: 0.5s;
+}
+
+
+
 .link {
   color: white;
   font-size: 1rem;
@@ -49,6 +70,28 @@
 
 .link:hover {
   color: #ff7f50;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(15px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-25px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

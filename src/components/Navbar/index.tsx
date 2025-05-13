@@ -30,7 +30,9 @@ const Navbar = () => {
             {t('navbar.contact')}
           </Link>
         </div>
-        <LanguageToggle />
+        <div className={styles.languageToggle}>
+          <LanguageToggle />
+        </div>
       </div>
     </nav>
   );
