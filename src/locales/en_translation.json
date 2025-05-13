@@ -41,5 +41,19 @@
         "c2": "Docker",
         "c3": "Postman, Insomnia",
         "c4": "AWS S3, MySQL, PostgreSQL"
+    },
+    "experience": {
+        "item1": {
+            "role": "Aspirant Officer",
+            "company": "Brazilian Army",
+            "date": "2021",
+            "description": "In 2021, I completed the Reserve Officers Training Center (NPOR), where I developed leadership, discipline, teamwork, and decision-making skills under pressure. Throughout the year, I received both practical and theoretical training in tactics, military organization, and logistics, culminating in my appointment as an Aspirant Officer in the reserve."
+        },
+        "item2": {
+            "role": "Member of the Projects Committee",
+            "company": "LATIM",
+            "date": "2024 - present",
+            "description": "I work on the ideation, planning, and execution of academic and multidisciplinary software projects. As a member of LATIM’s Projects Committee, I collaborate with diverse teams to develop technological solutions—from requirements gathering to the delivery of functional systems."
+        }
     }
 }
