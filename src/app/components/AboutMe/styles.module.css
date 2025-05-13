@@ -22,7 +22,6 @@
   align-items: stretch;
   gap: 1rem;
   flex-direction: row;
-  align-items: stretch;
 }
 
 .imageContainer {
@@ -79,21 +78,23 @@
   margin-bottom: 1rem;
 }
 
+@media (max-width: 905px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .imageWrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .imageContainer {
+    width: 100%;
+    min-width: unset;
+  }
+}   
+
 @media (max-width: 768px) {
-    .content {
-      flex-direction: column;
-    }
-
-    .imageWrapper {
-      margin-bottom: 1.5rem;
-    }
-
     .container {
       width: 95%;
-    }
-
-    .imageContainer {
-      width: 100%;
-      min-width: unset;
     }
 }
