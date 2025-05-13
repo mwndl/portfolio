@@ -55,5 +55,21 @@
             "date": "2024 - present",
             "description": "I work on the ideation, planning, and execution of academic and multidisciplinary software projects. As a member of LATIM’s Projects Committee, I collaborate with diverse teams to develop technological solutions—from requirements gathering to the delivery of functional systems."
         }
+    },
+    "contact": {
+        "title": "Contact",
+        "description1": "Have an idea in mind or want to exchange experiences about technology and development?",
+        "description2": "I'm always open to new challenges and good conversations.",
+        "buttonText": "Get in touch!",
+        "popup": {
+            "formTitle": "Send me a message",
+            "namePlaceholder": "Your name",
+            "emailPlaceholder": "Your email",
+            "messagePlaceholder": "Your message",
+            "send": "Send Message",
+            "sending": "Sending...",
+            "sent": "Message Sent!",
+            "error": "Error! Try Again"
+        }
     }
 }
