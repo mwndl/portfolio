@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import styles from './styles.module.css';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
-emailjs.init("BtmQzTDXym-Uy_Hjn"); 
+
+emailjs.init("BtmQzTDXym-Uy_Hjn");
 
 interface ContactPopupProps {
     isOpen: boolean;
@@ -23,10 +25,10 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('loading');
-        
+
         try {
             await emailjs.send(
-                "service_z4m65nj", 
+                "service_z4m65nj",
                 "template_tb29quk",
                 {
                     from_name: formData.name,
@@ -34,10 +36,10 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                     message: formData.message,
                 }
             );
-            
+
             setStatus('success');
             setFormData({ name: '', email: '', message: '' });
-            
+
             setTimeout(() => {
                 setStatus('idle');
                 onClose();
@@ -45,7 +47,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
         } catch (error) {
             console.error('Error sending email:', error);
             setStatus('error');
-            
+
             setTimeout(() => {
                 setStatus('idle');
             }, 3000);
@@ -62,12 +64,12 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
 
     if (!isOpen) return null;
 
-    return (
+    const popupContent = (
         <div className={styles.overlay} onClick={onClose}>
             <div className={styles.popup} onClick={e => e.stopPropagation()}>
                 <button className={styles.closeButton} onClick={onClose}>×</button>
                 <h2 className={styles.title}>{t('contact.popup.formTitle')}</h2>
-                
+
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <div className={styles.formGroup}>
                         <input
@@ -81,7 +83,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                             disabled={status === 'loading'}
                         />
                     </div>
-                    
+
                     <div className={styles.formGroup}>
                         <input
                             type="email"
@@ -94,7 +96,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                             disabled={status === 'loading'}
                         />
                     </div>
-                    
+
                     <div className={styles.formGroup}>
                         <textarea
                             name="message"
@@ -106,19 +108,21 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                             disabled={status === 'loading'}
                         />
                     </div>
-                    
-                    <button 
-                        type="submit" 
+
+                    <button
+                        type="submit"
                         className={`${styles.button} ${status === 'loading' ? styles.loading : ''}`}
                         disabled={status === 'loading'}
                     >
-                        {status === 'loading' ? t('contact.popup.sending') : 
-                         status === 'success' ? t('contact.popup.sent') :
-                         status === 'error' ? t('contact.popup.error') :
-                         t('contact.popup.send')}
+                        {status === 'loading' ? t('contact.popup.sending') :
+                            status === 'success' ? t('contact.popup.sent') :
+                                status === 'error' ? t('contact.popup.error') :
+                                    t('contact.popup.send')}
                     </button>
                 </form>
             </div>
         </div>
     );
-} 
+
+    return typeof window !== 'undefined' ? createPortal(popupContent, document.body) : null;
+}
