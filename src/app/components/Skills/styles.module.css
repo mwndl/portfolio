@@ -13,6 +13,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: stretch;
 }
 
 .skillsContainer {
@@ -36,6 +38,12 @@
     font-size: 1.25rem;
     color: #c0c0c0;
 }
+
+@media (max-width: 1170px) {
+    .container {
+        flex-direction: column;
+    }
+}   
 
 @media (max-width: 768px) {
     .container {
