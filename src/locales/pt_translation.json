@@ -22,5 +22,26 @@
         "linkedin": "LinkedIn",
         "github": "GitHub",
         "email": "E-mail"
+    },
+    "skills": {
+        "a_title": "Linguagens",
+        "a1": "Java",
+        "a2": "TypeScript, JavaScript",
+        "a3": "Python",
+        "a4": "HTML/CSS",
+
+        "b_title": "Frameworks",
+        "b1": "Spring Boot",
+        "b2": "React, React Native",
+        "b3": "Next.js",
+        "b4": "Node.js",
+
+        "c_title": "DevOps & Infra",
+        "c1": "Git, CI/CD (GitHub Actions)",
+        "c2": "Docker",
+        "c3": "Postman, Insomnia",
+        "c4": "AWS S3, MySQL, PostgreSQL"
     }
+
+
 }
