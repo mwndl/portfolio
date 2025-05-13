@@ -36,3 +36,14 @@
     font-size: 1.25rem;
     color: #c0c0c0;
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .skillsContainer {
+        width: 100%;
+    }
+}
