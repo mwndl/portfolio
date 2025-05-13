@@ -1,62 +1,130 @@
 .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    width: 80%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .shortcutsLeft, .shortcutsRight {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 0.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
 }
 
 .shortcut {
-    flex: 1;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #fff;
-    background-color: #000;
-    padding: 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .shortcut:hover {
-    background-color: #e8541e;
-    scale: 1.05;
+  background-color: #e8541e;
+}
+
+.shortcutsLeft > :nth-child(1),
+.shortcutsLeft > :nth-child(2),
+.shortcutsRight > :nth-child(1),
+.shortcutsRight > :nth-child(2) {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInRightToLeft {
+  from {
+      opacity: 0;
+      transform: translateX(25px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeftToRight {
+  from {
+      opacity: 0;
+      transform: translateX(-25px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(25px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-25px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
+  .container {
+      width: 95%;
+  }
 
-    .shortcutsLeft, .shortcutsRight {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 0.5rem;
-    }
+  .shortcutsLeft, .shortcutsRight {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0.5rem;
+  }
 
-    .shortcut {
-        width: 100%;
-    }
+  .shortcut {
+      width: 100%;
+  }
 }
