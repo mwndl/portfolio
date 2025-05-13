@@ -1,0 +1,65 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 18px;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #e8e8e8;
+    margin-bottom: 0;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #c0c0c0;
+    text-align: center;
+    max-width: 700px;
+}
+
+.contactButton {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #e8541e;
+    padding: 1rem;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contactButton:hover {
+    background-color: #ffffff;
+    color: #000;
+    scale: 1.05;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}

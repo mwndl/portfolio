@@ -2,9 +2,9 @@ import AboutMe from './components/AboutMe';
 import Shortcuts from './components/Shortcuts';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import Contact from './components/Contact';
 /*
 import Projects from './components/Projects';
-import Contact from './components/Contact';
 */
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
       <Experience />
       {/*
       <Projects />
-      <Contact />
       */}
+      <Contact />
     </main>
   );
 }
