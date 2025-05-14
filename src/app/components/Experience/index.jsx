@@ -18,6 +18,7 @@ export default function Experience() {
         ref={containerRef}
         className={`${styles.container} ${isVisible ? styles.visible : ''}`}
       >
+        <h2 className={`${styles.sectionTitle} ${isVisible ? styles.fadeInUp : ''}`} style={{ animationDelay: `0.25s` }}>{t('experience.title')}</h2>
         {items.map((itemKey, index) => {
           const leftDelay = 0.2 + index * 0.3;
           const rightDelay = leftDelay + 0.1;
