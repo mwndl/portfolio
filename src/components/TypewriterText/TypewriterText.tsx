@@ -7,14 +7,19 @@ interface TypewriterTextProps {
   text: string | string[];
   speed?: number; // palavras por minuto
   onComplete?: () => void;
-  startAnimation?: boolean;
+  start?: boolean;
 }
 
-export default function TypewriterText({ text, speed = 200, onComplete, startAnimation = true }: TypewriterTextProps) {
+export default function TypewriterText({
+  text,
+  speed = 200,
+  onComplete,
+  start = true,
+}: TypewriterTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!startAnimation) return;
+    if (!start) return;
 
     const container = containerRef.current;
     if (!container) return;
@@ -24,14 +29,14 @@ export default function TypewriterText({ text, speed = 200, onComplete, startAni
 
     const texts = Array.isArray(text) ? text : [text];
 
-    // Primeiro, cria todos os parágrafos e palavras
-    const paragraphs = texts.map(textContent => {
+    // Cria os parágrafos e spans
+    const paragraphs = texts.map((textContent) => {
       const words = textContent.split(' ');
       const paragraph = document.createElement('p');
       paragraph.className = styles.paragraph;
       container.appendChild(paragraph);
-      
-      words.forEach(word => {
+
+      words.forEach((word) => {
         const span = document.createElement('span');
         span.textContent = word + ' ';
         span.className = styles.word;
@@ -41,7 +46,6 @@ export default function TypewriterText({ text, speed = 200, onComplete, startAni
       return paragraph;
     });
 
-    // Depois, anima as palavras de cada parágrafo em sequência
     const animateText = async (paragraph: HTMLParagraphElement) => {
       const spans = paragraph.getElementsByTagName('span');
       let currentWordIndex = 0;
@@ -55,7 +59,7 @@ export default function TypewriterText({ text, speed = 200, onComplete, startAni
             clearInterval(interval);
             resolve();
           }
-        }, (60 * 1000) / speed);
+        }, (60 * 1000) / speed); // delay por palavra
       });
     };
 
@@ -73,7 +77,7 @@ export default function TypewriterText({ text, speed = 200, onComplete, startAni
     return () => {
       container.innerHTML = '';
     };
-  }, [text, speed, startAnimation, onComplete]);
+  }, [text, speed, start, onComplete]);
 
   return <div ref={containerRef} className={styles.container} />;
-} 
+}
