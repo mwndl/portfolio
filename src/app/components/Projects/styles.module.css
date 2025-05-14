@@ -73,15 +73,8 @@
     opacity: 0;
 }
 
-.projectCard .title,
-.projectCard .skill {
+.title, .description, .iconLink {
     opacity: 0;
-    transform: translateY(25px); /* Definindo o estado inicial */
-}
-
-.projectCard .title,
-.projectCard .skill {
-    animation: fadeInUp 1s ease-in-out forwards;
 }
 
 .projectCard .title {
@@ -89,12 +82,17 @@
     font-weight: bold;
     color: #ff7f50;
     margin-bottom: 1rem;
+    animation: fadeInRightToLeft 1s ease-in-out forwards;
 }
 
 .projectCard .skill {
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
     color: #c0c0c0;
+}
+
+.title, .description {
+    opacity: 0;
 }
 
 .projectCard .skill:nth-child(1) {
@@ -141,6 +139,28 @@
     }
 }
 
+@keyframes fadeInRightToLeft {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes zoomIn {
     from {
         opacity: 0;
@@ -155,6 +175,11 @@
 .fadeInUp {
     transform: translateY(25px);
     animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.fadeInRightToLeft {
+    transform: translateX(25px);
+    animation: fadeInRightToLeft 1s ease-in-out forwards;
 }
 
 @media (max-width: 1170px) {

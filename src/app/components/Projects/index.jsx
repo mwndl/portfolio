@@ -3,7 +3,7 @@
 import styles from './styles.module.css';
 import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -29,7 +29,7 @@ export default function Projects() {
           style={{ animationDelay: `0.2s` }}
         >
           {projectKeys.map((key, index) => {
-            const delay = 0.2 + index * 0.3;
+            const baseDelay = 0.3 + index * 0.3;
             const title = t(`projects.${key}.title`);
             const description = t(`projects.${key}.description`);
             const github = t(`projects.${key}.github`);
@@ -42,11 +42,21 @@ export default function Projects() {
               <div
                 key={key}
                 className={`${styles.projectCard} ${isVisible ? styles.fadeInUp : ''}`}
-                style={{ animationDelay: `${delay}s` }}
+                style={{ animationDelay: `${baseDelay}s` }}
               >
                 <div className={styles.textContainer}>
-                  <h2 className={styles.title}>{title}</h2>
-                  <p className={styles.description}>{description}</p>
+                  <h2
+                    className={`${styles.title} ${isVisible ? styles.fadeInRightToLeft : ''}`}
+                    style={{ animationDelay: `${baseDelay + 0.2}s` }}
+                  >
+                    {title}
+                  </h2>
+                  <p
+                    className={`${styles.description} ${isVisible ? styles.fadeInUp : ''}`}
+                    style={{ animationDelay: `${baseDelay + 0.4}s` }}
+                  >
+                    {description}
+                  </p>
                 </div>
 
                 <div className={styles.links}>
@@ -55,7 +65,8 @@ export default function Projects() {
                       href={github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={styles.iconLink}
+                      className={`${styles.iconLink} ${isVisible ? styles.fadeInUp : ''}`}
+                      style={{ animationDelay: `${baseDelay + 0.5}s` }}
                       aria-label="GitHub"
                     >
                       <FaGithub size={20} />
@@ -66,7 +77,8 @@ export default function Projects() {
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={styles.iconLink}
+                      className={`${styles.iconLink} ${isVisible ? styles.fadeInUp : ''}`}
+                      style={{ animationDelay: `${baseDelay + 0.7}s` }}
                       aria-label="External link"
                     >
                       <FaExternalLinkAlt size={20} />
