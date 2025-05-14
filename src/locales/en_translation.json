@@ -71,10 +71,9 @@
             "link": "https://valorize.onrender.com"
         },
         "project3": {
-            "title": "FaceVectors",
-            "description": "Web tool for facial vector recognition, with saved user identification, estimated gender, and real-time age detection.",
-            "github": "https://github.com/mwndl/facevectors",
-            "link": "https://facevectors.onrender.com"
+            "title": "YT Custom Player",
+            "description": "An npm package for customizing and styling the YouTube player in React applications. It allows developers to embed YouTube videos with customizable properties such as start/end time, autoplay, mute, fullscreen mode, and more, offering a tailored video player experience.",
+            "npm": "https://www.npmjs.com/package/yt-custom-player"
         }
     },
     "contact": {

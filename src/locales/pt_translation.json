@@ -66,15 +66,14 @@
         },
         "project2": {
             "title": "Valorize",
-            "description": "Simulador de investimentos de renda fixa com suporte aos principais tipos de investimentos, com gráficos e métricas de progresso.",
+            "description": "Um simulador de investimentos de renda fixa com suporte aos principais tipos de investimentos: prefixados, pós-fixados e indexados ao IPCA. A ferramenta inclui métricas completas, gráficos e uma tabela de progresso mensal.",
             "github": "https://github.com/mwndl/valorize",
             "link": "https://valorize.onrender.com"
         },
         "project3": {
-            "title": "FaceVectors",
-            "description": "Ferramenta web para reconhecimento de vetores faciais, com identificação de usuário salvos, gênero e idade estimada em tempo real.",
-            "github": "https://github.com/mwndl/facevectors",
-            "link": "https://facevectors.onrender.com"
+            "title": "YT Custom Player",
+            "description": "Um pacote npm para personalizar e estilizar o player do YouTube em aplicações React. Ele permite que desenvolvedores incorporem vídeos do YouTube com propriedades personalizáveis, como tempo de início/fim, autoplay, mudo, modo fullscreen e mais, oferecendo uma experiência de player de vídeo sob medida.",
+            "link": "https://www.npmjs.com/package/yt-custom-player"
         }
     },
     "contact": {
