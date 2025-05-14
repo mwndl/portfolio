@@ -7,7 +7,7 @@
         "contact": "Contact"
     },
     "footer": {
-        "copyright": "© 2025 Marcos Wiendl. All rights reserved."
+        "copyright": "© {{year}} Marcos Wiendl. All rights reserved."
     },
     "aboutMe": {
         "name": "Marcos Wiendl",
