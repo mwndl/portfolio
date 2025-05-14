@@ -43,6 +43,7 @@
         "c4": "AWS S3, MySQL, PostgreSQL"
     },
     "experience": {
+        "title": "Experiência",
         "item1": {
             "role": "Aspirant Officer",
             "company": "Brazilian Army",
@@ -54,6 +55,26 @@
             "company": "LATIM",
             "date": "2024 - present",
             "description": "I work on the ideation, planning, and execution of academic and multidisciplinary software projects. As a member of LATIM’s Projects Committee, I collaborate with diverse teams to develop technological solutions—from requirements gathering to the delivery of functional systems."
+        }
+    },
+    "projects": {
+        "title": "Main Projects",
+        "project1": {
+            "title": "Finapp API",
+            "description": "Robust RESTful API built with Java and Spring Boot for personal finance management. Features JWT authentication with refresh tokens, collaborative goals between users, income and expense tracking, real-time balance calculation, and password recovery via email.",
+            "github": "https://github.com/mwndl/finapp_api"
+        },
+        "project2": {
+            "title": "Valorize",
+            "description": "Fixed-income investment simulator supporting major asset types, with charts and progress metrics.",
+            "github": "https://github.com/mwndl/valorize",
+            "link": "https://valorize.onrender.com"
+        },
+        "project3": {
+            "title": "FaceVectors",
+            "description": "Web tool for facial vector recognition, with saved user identification, estimated gender, and real-time age detection.",
+            "github": "https://github.com/mwndl/facevectors",
+            "link": "https://facevectors.onrender.com"
         }
     },
     "contact": {

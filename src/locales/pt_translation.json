@@ -43,6 +43,7 @@
         "c4": "AWS S3, MySQL, PostgreSQL"
     },
     "experience": {
+        "title": "Experiência",
         "item1": {
             "role": "Aspirante a Oficial",
             "company": "Exército Brasileiro",
@@ -54,6 +55,26 @@
             "company": "LATIM",
             "date": "2024 - atual",
             "description": "Atuo na idealização, planejamento e execução de projetos de software com foco acadêmico e multidisciplinar. Como membro da Comissão de Projetos da LATIM, colaboro com equipes diversas para desenvolver soluções tecnológicas que envolvem desde o levantamento de requisitos até a entrega de sistemas funcionais."
+        }
+    },
+    "projects": {
+        "title": "Principais Projetos",
+        "project1": {
+            "title": "Finapp API",
+            "description": "API RESTful robusta em Java com Spring Boot para gerenciamento de finanças pessoais. Autenticação JWT com refresh token, metas colaborativas entre usuários, depósitos com entradas e saídas, cálculo em tempo real de saldo e recuperação de senha por e-mail.",
+            "github": "https://github.com/mwndl/finapp_api"
+        },
+        "project2": {
+            "title": "Valorize",
+            "description": "Simulador de investimentos de renda fixa com suporte aos principais tipos de investimentos, com gráficos e métricas de progresso.",
+            "github": "https://github.com/mwndl/valorize",
+            "link": "https://valorize.onrender.com"
+        },
+        "project3": {
+            "title": "FaceVectors",
+            "description": "Ferramenta web para reconhecimento de vetores faciais, com identificação de usuário salvos, gênero e idade estimada em tempo real.",
+            "github": "https://github.com/mwndl/facevectors",
+            "link": "https://facevectors.onrender.com"
         }
     },
     "contact": {
