@@ -6,10 +6,21 @@ import TypewriterText from '../../../components/TypewriterText/TypewriterText';
 import { useTranslation } from 'react-i18next';
 import { PROFILE_BLUR_DATA } from './constants';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useState, useEffect } from 'react';
 
 export default function AboutMe() {
     const { t } = useTranslation();
     const [containerRef, isVisible] = useIntersectionObserver();
+    const [startTyping, setStartTyping] = useState(false);
+
+    useEffect(() => {
+        if (isVisible) {
+            const timeout = setTimeout(() => {
+                setStartTyping(true);
+            }, 900); // delay to start typing
+            return () => clearTimeout(timeout);
+        }
+    }, [isVisible]);
 
     const paragraphs = [
         t('aboutMe.paragraph1'),
@@ -57,7 +68,7 @@ export default function AboutMe() {
                 </h2>
 
                 <div className={`${styles.text} ${isVisible ? styles.fadeInUp : ''}`} style={{ animationDelay: '0.90s' }}>
-                    <TypewriterText text={paragraphs} speed={400} />
+                    <TypewriterText text={paragraphs} speed={400} start={startTyping}/>
                 </div>
             </div>
             </div>

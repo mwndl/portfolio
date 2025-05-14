@@ -19,6 +19,7 @@
 .navbarBrand {
   display: flex;
   align-items: center;
+  animation: fadeInDown15 1s ease-in-out forwards;
 }
 
 .brandLink {
@@ -41,7 +42,7 @@
 
 .navLinks, .languageToggle, .link {
   opacity: 0;
-  animation: fadeInUp 1s ease-in-out 0.2s forwards;
+  animation: fadeInDown15 1s ease-in-out 0.2s forwards;
 }
 
 .navLinks > :nth-child(1) {
@@ -72,10 +73,11 @@
   color: #ff7f50;
 }
 
-@keyframes fadeInUp {
+
+@keyframes fadeInDown {
   from {
       opacity: 0;
-      transform: translateY(15px);
+      transform: translateY(-25px);
   }
   to {
       opacity: 1;
@@ -83,10 +85,10 @@
   }
 }
 
-@keyframes fadeInDown {
+@keyframes fadeInDown15 {
   from {
       opacity: 0;
-      transform: translateY(-25px);
+      transform: translateY(-15px);
   }
   to {
       opacity: 1;
