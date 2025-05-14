@@ -1,0 +1,179 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.projectsContainer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: stretch;
+}
+
+.sectionTitle {
+    position: relative;
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #ff7f50;
+    width: 100%;
+    padding: 0.5rem;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+  .sectionTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ff7f50;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  
+  .visible .sectionTitle::after {
+    transform: scaleX(1);
+    transition-delay: 0.4s;
+  }
+
+.projectCard {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 2rem;
+    border-radius: 1rem;
+    opacity: 0;
+}
+
+.projectCard .title,
+.projectCard .skill {
+    opacity: 0;
+    transform: translateY(25px); /* Definindo o estado inicial */
+}
+
+.projectCard .title,
+.projectCard .skill {
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.projectCard .title {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #ff7f50;
+    margin-bottom: 1rem;
+}
+
+.projectCard .skill {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    color: #c0c0c0;
+}
+
+.projectCard .skill:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.projectCard .skill:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.projectCard .skill:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.projectCard .skill:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.projectCard.visible .title,
+.projectCard.visible .skill {
+    opacity: 1;
+    transform: translateY(0); /* Aplica animação quando a classe visible for adicionada */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fadeInUp {
+    transform: translateY(25px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@media (max-width: 1170px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+    }
+    .projectsContainer {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .skillsContainer {
+        width: 100%;
+    }
+}
