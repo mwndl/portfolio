@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import TypewriterText from '../../../components/TypewriterText/TypewriterText';
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -51,12 +52,12 @@ export default function Projects() {
                   >
                     {title}
                   </h2>
-                  <p
+                  <div
                     className={`${styles.description} ${isVisible ? styles.fadeInUp : ''}`}
                     style={{ animationDelay: `${baseDelay + 0.4}s` }}
                   >
-                    {description}
-                  </p>
+                    <TypewriterText text={description} speed={400} start={isVisible} />
+                  </div>
                 </div>
 
                 <div className={styles.links}>
