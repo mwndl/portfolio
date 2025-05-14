@@ -19,16 +19,16 @@ export default function Contact() {
             <div className={`${styles.container} ${isVisible ? styles.fadeInRightToLeft : ''}`}>
                 <div className={styles.textContainer}>
                     <h2 className={`${styles.title} ${isVisible ? styles.fadeInRightToLeft : ''}`}
-                        style={{ animationDelay: '0.15s' }}
+                        style={{ animationDelay: '0.3s' }}
                     >
                         {t('contact.title')}
                     </h2>
                     <p className={`${styles.description} ${isVisible ? styles.fadeInRightToLeft : ''}`}
-                        style={{ animationDelay: '0.3s' }}>
+                        style={{ animationDelay: '0.5s' }}>
                         {t('contact.description1')}
                     </p>
                     <p className={`${styles.description} ${isVisible ? styles.fadeInRightToLeft : ''}`}
-                        style={{ animationDelay: '0.45s' }}
+                        style={{ animationDelay: '0.7s' }}
                     >
                         {t('contact.description2')}
                     </p>
@@ -36,7 +36,7 @@ export default function Contact() {
                 <button 
                     className={`${styles.contactButton} ${isVisible ? styles.fadeInUp : ''}`}
                     onClick={() => setIsPopupOpen(true)}
-                    style={{ animationDelay: '0.6s' }}
+                    style={{ animationDelay: '0.9s' }}
                 >
                     {t('contact.buttonText')}
                 </button>
