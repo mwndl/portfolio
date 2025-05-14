@@ -8,6 +8,7 @@ interface TypewriterTextProps {
   speed?: number; // palavras por minuto
   onComplete?: () => void;
   start?: boolean;
+  readColor?: string; // nova prop opcional
 }
 
 export default function TypewriterText({
@@ -15,12 +16,11 @@ export default function TypewriterText({
   speed = 200,
   onComplete,
   start = true,
+  readColor,
 }: TypewriterTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!start) return;
-
     const container = containerRef.current;
     if (!container) return;
 
@@ -29,7 +29,6 @@ export default function TypewriterText({
 
     const texts = Array.isArray(text) ? text : [text];
 
-    // Cria os parágrafos e spans
     const paragraphs = texts.map((textContent) => {
       const words = textContent.split(' ');
       const paragraph = document.createElement('p');
@@ -46,6 +45,11 @@ export default function TypewriterText({
       return paragraph;
     });
 
+    if (!start) {
+      // Apenas exibe o texto sem animação e sem destaque
+      return;
+    }
+
     const animateText = async (paragraph: HTMLParagraphElement) => {
       const spans = paragraph.getElementsByTagName('span');
       let currentWordIndex = 0;
@@ -53,13 +57,17 @@ export default function TypewriterText({
       return new Promise<void>((resolve) => {
         const interval = setInterval(() => {
           if (currentWordIndex < spans.length) {
-            spans[currentWordIndex].classList.add(styles.highlighted);
+            const span = spans[currentWordIndex];
+            span.classList.add(styles.highlighted);
+            if (readColor) {
+              span.style.color = readColor;
+            }
             currentWordIndex++;
           } else {
             clearInterval(interval);
             resolve();
           }
-        }, (60 * 1000) / speed); // delay por palavra
+        }, (60 * 1000) / speed);
       });
     };
 
@@ -77,7 +85,7 @@ export default function TypewriterText({
     return () => {
       container.innerHTML = '';
     };
-  }, [text, speed, start, onComplete]);
+  }, [text, speed, start, onComplete, readColor]);
 
   return <div ref={containerRef} className={styles.container} />;
 }
