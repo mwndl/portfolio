@@ -22,8 +22,24 @@ export default function AboutMe() {
         }
     }, [isVisible]);
 
+    const calculateAge = (birthDate: Date) => {
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const hasHadBirthdayThisYear =
+          today.getMonth() > birthDate.getMonth() ||
+          (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+        if (!hasHadBirthdayThisYear) {
+          age--;
+        }
+        return age;
+      };
+
+    const birthDate = new Date('2002-05-25');
+    const age = calculateAge(birthDate);
+      
+
     const paragraphs = [
-        t('aboutMe.paragraph1'),
+        t('aboutMe.paragraph1', { age }),
         t('aboutMe.paragraph2'),
     ];
       
