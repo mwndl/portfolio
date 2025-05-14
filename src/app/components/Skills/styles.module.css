@@ -30,12 +30,12 @@
 .skillsContainer .title,
 .skillsContainer .skill {
     opacity: 0;
-    transform: translateY(25px); /* Definindo o estado inicial */
+    transform: translateY(25px); 
 }
 
 .skillsContainer .title,
 .skillsContainer .skill {
-    animation: fadeInUp 1s ease-in-out forwards;
+    animation: fadeInRightToLeft 1s ease-in-out forwards;
 }
 
 .skillsContainer .title {
@@ -106,9 +106,35 @@
     }
 }
 
+@keyframes fadeInRightToLeft {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .fadeInUp {
     transform: translateY(25px);
     animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.fadeInRightToLeft {
+    
 }
 
 @media (max-width: 1170px) {

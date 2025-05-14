@@ -20,26 +20,26 @@ export default function Skills() {
     <section id="skills" className={styles.section}>
       <div ref={containerRef} className={`${styles.container} ${isVisible ? styles.visible : ''}`}>
         {skillsSections.map((section, sectionIndex) => {
-          const sectionDelay = 0.2 + sectionIndex * 0.2; // Delays em cascata para cada seção
+          const sectionDelay = 0.2 + sectionIndex * 0.2;
           return (
             <div
               key={section.titleKey}
-              className={`${styles.skillsContainer} ${isVisible ? styles.fadeInUp : ''}`} // Adiciona fadeInUp condicionalmente
-              style={{ animationDelay: `${sectionDelay}s` }} // Delay da seção
+              className={`${styles.skillsContainer} ${isVisible ? styles.fadeInUp : ''}`}
+              style={{ animationDelay: `${sectionDelay}s` }}
             >
               <h2
-                className={`${styles.title} ${isVisible ? styles.fadeInUp : ''}`} // Animação condicional para o título
+                className={styles.title}
                 style={{ animationDelay: `${sectionDelay}s` }}
               >
                 {t(`skills.${section.titleKey}`)}
               </h2>
               <div className={styles.skills}>
                 {section.skillsKeys.map((skillKey, skillIndex) => {
-                  const skillDelay = sectionDelay + 0.2 + skillIndex * 0.2; // Delay progressivo para cada skill
+                  const skillDelay = sectionDelay + 0.2 + skillIndex * 0.2;
                   return (
                     <h3
                       key={skillKey}
-                      className={`${styles.skill} ${isVisible ? styles.fadeInUp : ''}`} // Animação condicional para a skill
+                      className={styles.skill}
                       style={{ animationDelay: `${skillDelay}s` }}
                     >
                       {t(`skills.${skillKey}`)}
