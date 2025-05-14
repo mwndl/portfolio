@@ -39,6 +39,7 @@
 
 .shortcut:hover {
   background-color: #e8541e;
+  scale: 1.025;
 }
 
 .shortcutsLeft > :nth-child(1),
