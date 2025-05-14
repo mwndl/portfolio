@@ -7,14 +7,14 @@
         "contact": "Contato"
     },
     "footer": {
-        "copyright": "© 2025 Marcos Wiendl. Todos os direitos reservados."
+        "copyright": "© {{year}} Marcos Wiendl. Todos os direitos reservados."
     },
     "aboutMe": {
         "name": "Marcos Wiendl",
         "role": "Desenvolvedor Full Stack",
         "title": "Sobre Mim",
-        "paragraph1": "Olá! Me chamo Marcos, sou desenvolvedor full stack focado em criar soluções digitais que unem interfaces intuitivas a back-ends robustos. Gosto de resolver problemas com criatividade e entregar valor real aos usuários.",
-        "paragraph2": "Formado em Sistemas para Internet e cursando MBA em Full Stack Web Development, estou sempre evoluindo. No tempo livre, exploro novas tecnologias, crio projetos pessoais e acompanho as tendências do setor."
+        "paragraph1": "Olá! Me chamo Marcos, tenho {{age}} anos, sou desenvolvedor full stack focado em criar soluções digitais que unem interfaces intuitivas a back-ends robustos. Gosto de resolver problemas com criatividade e entregar valor real aos usuários.",
+        "paragraph2": "Me formei recentemente em Sistemas para Internet e estou em busca de uma oportunidade para aplicar todo o conhecimento que adquiri. Atualmente, curso um MBA em Full Stack Web Development. No tempo livre, exploro novas tecnologias, crio projetos pessoais e acompanho as tendências do setor."
     },
     "shortcuts": {
         "resume": "Currículo",
