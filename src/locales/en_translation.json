@@ -14,7 +14,7 @@
         "role": "Full Stack Developer",
         "title": "About Me",
         "paragraph1": "Hello! I'm Marcos, {{age}} years old. I'm a full stack developer focused on creating digital solutions that combine intuitive interfaces with robust back-ends. I enjoy solving problems with creativity and delivering real value to users.",
-        "paragraph2": "I recently graduated in Internet Systems and I'm looking for an opportunity to apply all the knowledge I've acquired. I'm currently pursuing an MBA in Full Stack Web Development. In my free time, I explore new technologies, create personal projects, and follow industry trends."
+        "paragraph2": "I recently graduated in Web Development and I'm looking for an opportunity to apply all the knowledge I've acquired. I'm currently pursuing an MBA in Full Stack Web Development. In my free time, I explore new technologies, create personal projects, and follow industry trends."
     },
     "shortcuts": {
         "resume": "Resume",
@@ -24,7 +24,7 @@
         "email": "Email"
     },
     "skills": {
-        "a_title": "Linguagens",
+        "a_title": "Languages",
         "a1": "Java",
         "a2": "TypeScript, JavaScript",
         "a3": "Python",
@@ -43,12 +43,12 @@
         "c4": "AWS S3, MySQL, PostgreSQL"
     },
     "experience": {
-        "title": "Experiência",
+        "title": "Experience",
         "item1": {
-            "role": "Aspirant Officer",
+            "role": "Reserve Second Lieutenant",
             "company": "Brazilian Army",
             "date": "2021",
-            "description": "In 2021, I completed the Reserve Officers Training Center (NPOR), where I developed leadership, discipline, teamwork, and decision-making skills under pressure. Throughout the year, I received both practical and theoretical training in tactics, military organization, and logistics, culminating in my appointment as an Aspirant Officer in the reserve."
+            "description": "In 2021, I completed the Reserve Officers Training Center (NPOR), where I developed leadership, discipline, teamwork, and decision-making skills under pressure. Throughout the year, I received both practical and theoretical training in tactics, military organization, and logistics, culminating in my appointment as an Reserve Second Lieutenant."
         },
         "item2": {
             "role": "Member of the Projects Committee",
@@ -78,7 +78,7 @@
     },
     "contact": {
         "title": "Contact",
-        "description1": "Have an idea in mind or want to exchange experiences about technology and development?",
+        "description1": "Have an idea in mind or want to share ideas or talk about technology and development?",
         "description2": "I'm always open to new challenges and good conversations.",
         "buttonText": "Get in touch!",
         "popup": {
