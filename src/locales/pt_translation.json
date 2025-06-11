@@ -58,22 +58,104 @@
         }
     },
     "projects": {
-        "title": "Principais Projetos",
+        "title": "Projetos Principais",
         "project1": {
-            "title": "Finapp API",
-            "description": "API RESTful robusta em Java com Spring Boot para gerenciamento de finanças pessoais. Autenticação JWT com refresh token, metas colaborativas entre usuários, depósitos com entradas e saídas, cálculo em tempo real de saldo e recuperação de senha por e-mail.",
-            "github": "https://github.com/mwndl/finapp_api"
+            "title": "AuthKit",
+            "description": "Uma solução robusta de autenticação fullstack construída com Java e NextJS. Possui um sistema abrangente de autenticação incluindo fluxos de login/registro, recuperação de senha, áreas protegidas, suporte a 2FA, integração com Passkeys, notificações por email e notificações em tempo real via WebSocket. Projetado para aplicações de nível empresarial que requerem autenticação segura e escalável.",
+            "github": "https://github.com/mwndl/authkit",
+            "learnMore": "Saiba Mais",
+            "demo": "Abrir Demo",
+            "demoUrl": "https://authkit-demo.render.com",
+            "details": {
+                "title": "AuthKit - Solução de Autenticação Empresarial",
+                "description": "AuthKit é uma solução abrangente de autenticação projetada para aplicações de nível empresarial. Construída com tecnologias modernas e melhores práticas, fornece uma base segura e escalável para autenticação e autorização de usuários.",
+                "features": {
+                    "security": {
+                        "title": "Segurança & Autenticação",
+                        "items": [
+                            "JWT com refresh tokens e 2FA",
+                            "Passkeys e autenticação sem senha",
+                            "Bloqueio progressivo de login",
+                            "Gerenciamento e monitoramento de sessões"
+                        ]
+                    },
+                    "userExperience": {
+                        "title": "Experiência do Usuário",
+                        "items": [
+                            "Notificações por email e tempo real",
+                            "Suporte a múltiplos idiomas (i18n)",
+                            "Interface responsiva e acessível",
+                            "Mensagens toast e tratamento de erros"
+                        ]
+                    },
+                    "management": {
+                        "title": "Gerenciamento de Contas",
+                        "items": [
+                            "Criação e recuperação de contas",
+                            "Controle de acesso baseado em funções",
+                            "Rotas protegidas e validação",
+                            "Período de recuperação de 30 dias"
+                        ]
+                    }
+                },
+                "techStack": {
+                    "title": "Stack Tecnológica",
+                    "backend": "Java, Spring Boot, Spring Security",
+                    "frontend": "Next.js, TypeScript, Tailwind CSS",
+                    "database": "PostgreSQL",
+                    "infrastructure": "Docker, AWS"
+                }
+            }
         },
         "project2": {
+            "title": "Finapp API",
+            "description": "API RESTful robusta em Java com Spring Boot para gerenciamento de finanças pessoais. Autenticação JWT com refresh token, metas colaborativas entre usuários, depósitos com entradas e saídas, cálculo em tempo real de saldo e recuperação de senha por e-mail.",
+            "github": "https://github.com/mwndl/finapp_api",
+            "learnMore": "Saiba Mais",
+            "details": {
+                "title": "Finapp API - Gerenciamento de Finanças Pessoais",
+                "description": "Uma API abrangente para gerenciar finanças pessoais, permitindo que os usuários acompanhem suas receitas, despesas e metas de economia. O sistema suporta metas financeiras colaborativas e fornece cálculos de saldo em tempo real.",
+                "features": [
+                    "Autenticação JWT com refresh tokens",
+                    "Metas financeiras colaborativas",
+                    "Acompanhamento de receitas e despesas",
+                    "Cálculo de saldo em tempo real",
+                    "Notificações por email para eventos importantes",
+                    "Design de API RESTful",
+                    "Documentação abrangente"
+                ],
+                "techStack": {
+                    "title": "Stack Tecnológica",
+                    "backend": "Java, Spring Boot, Spring Security",
+                    "database": "PostgreSQL",
+                    "infrastructure": "Docker"
+                }
+            }
+        },
+        "project3": {
             "title": "Valorize",
             "description": "Um simulador de investimentos de renda fixa com suporte aos principais tipos de investimentos: prefixados, pós-fixados e indexados ao IPCA. A ferramenta inclui métricas completas, gráficos e uma tabela de progresso mensal.",
             "github": "https://github.com/mwndl/valorize",
-            "link": "https://valorize.onrender.com"
-        },
-        "project3": {
-            "title": "YT Custom Player",
-            "description": "Um pacote npm para personalizar e estilizar o player do YouTube em aplicações React. Ele permite que desenvolvedores incorporem vídeos do YouTube com propriedades personalizáveis, como tempo de início/fim, autoplay, mudo, modo fullscreen e mais, oferecendo uma experiência de player de vídeo sob medida.",
-            "link": "https://www.npmjs.com/package/yt-custom-player"
+            "link": "https://valorize.onrender.com",
+            "learnMore": "Saiba Mais",
+            "details": {
+                "title": "Valorize - Simulador de Investimentos de Renda Fixa",
+                "description": "Uma ferramenta poderosa para simular e analisar investimentos de renda fixa. A aplicação suporta vários tipos de investimento e fornece métricas detalhadas e visualizações para ajudar os usuários a tomar decisões de investimento informadas.",
+                "features": [
+                    "Suporte a múltiplos tipos de investimento",
+                    "Gráficos e visualizações interativas",
+                    "Acompanhamento de progresso mensal",
+                    "Ferramentas de comparação de investimentos",
+                    "Métricas e análises detalhadas",
+                    "Design responsivo"
+                ],
+                "techStack": {
+                    "title": "Stack Tecnológica",
+                    "frontend": "React, TypeScript, Chart.js",
+                    "styling": "Tailwind CSS",
+                    "deployment": "Render"
+                }
+            }
         }
     },
     "contact": {

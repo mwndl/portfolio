@@ -54,26 +54,108 @@
             "role": "Member of the Projects Committee",
             "company": "LATIM",
             "date": "2024 - present",
-            "description": "I work on the ideation, planning, and execution of academic and multidisciplinary software projects. As a member of LATIM’s Projects Committee, I collaborate with diverse teams to develop technological solutions—from requirements gathering to the delivery of functional systems."
+            "description": "I work on the ideation, planning, and execution of academic and multidisciplinary software projects. As a member of LATIM's Projects Committee, I collaborate with diverse teams to develop technological solutions—from requirements gathering to the delivery of functional systems."
         }
     },
     "projects": {
         "title": "Main Projects",
         "project1": {
-            "title": "Finapp API",
-            "description": "Robust RESTful API built with Java and Spring Boot for personal finance management. Features JWT authentication with refresh tokens, collaborative goals between users, income and expense tracking, real-time balance calculation, and password recovery via email.",
-            "github": "https://github.com/mwndl/finapp_api"
+            "title": "AuthKit",
+            "description": "A robust fullstack authentication solution built with Java and NextJS. Features a comprehensive authentication system including login/registration flows, password recovery, protected areas, 2FA support, Passkeys integration, email notifications, and real-time WebSocket notifications. Designed for enterprise-level applications requiring secure and scalable authentication.",
+            "github": "https://github.com/mwndl/authkit",
+            "learnMore": "Learn More",
+            "demo": "Open Demo",
+            "demoUrl": "https://authkit-demo.render.com",
+            "details": {
+                "title": "AuthKit - Enterprise Authentication Solution",
+                "description": "AuthKit is a comprehensive authentication solution designed for enterprise-level applications. Built with modern technologies and best practices, it provides a secure and scalable foundation for user authentication and authorization.",
+                "features": {
+                    "security": {
+                        "title": "Security & Authentication",
+                        "items": [
+                            "JWT with refresh tokens and 2FA",
+                            "Passkeys and passwordless auth",
+                            "Progressive login blocking",
+                            "Session management and monitoring"
+                        ]
+                    },
+                    "userExperience": {
+                        "title": "User Experience",
+                        "items": [
+                            "Email and real-time notifications",
+                            "Multi-language support (i18n)",
+                            "Responsive and accessible UI",
+                            "Toast messages and error handling"
+                        ]
+                    },
+                    "management": {
+                        "title": "Account Management",
+                        "items": [
+                            "Account creation and recovery",
+                            "Role-based access control",
+                            "Protected routes and validation",
+                            "30-day account recovery period"
+                        ]
+                    }
+                },
+                "techStack": {
+                    "title": "Tech Stack",
+                    "backend": "Java, Spring Boot, Spring Security",
+                    "frontend": "Next.js, TypeScript, Tailwind CSS",
+                    "database": "PostgreSQL",
+                    "infrastructure": "Docker, AWS"
+                }
+            }
         },
         "project2": {
+            "title": "Finapp API",
+            "description": "Robust RESTful API built with Java and Spring Boot for personal finance management. Features JWT authentication with refresh tokens, collaborative goals between users, income and expense tracking, real-time balance calculation, and password recovery via email.",
+            "github": "https://github.com/mwndl/finapp_api",
+            "learnMore": "Learn More",
+            "details": {
+                "title": "Finapp API - Personal Finance Management",
+                "description": "A comprehensive API for managing personal finances, allowing users to track their income, expenses, and savings goals. The system supports collaborative financial goals and provides real-time balance calculations.",
+                "features": [
+                    "JWT authentication with refresh tokens",
+                    "Collaborative financial goals",
+                    "Income and expense tracking",
+                    "Real-time balance calculation",
+                    "Email notifications for important events",
+                    "RESTful API design",
+                    "Comprehensive documentation"
+                ],
+                "techStack": {
+                    "title": "Tech Stack",
+                    "backend": "Java, Spring Boot, Spring Security",
+                    "database": "PostgreSQL",
+                    "infrastructure": "Docker"
+                }
+            }
+        },
+        "project3": {
             "title": "Valorize",
             "description": "Fixed-income investment simulator supporting major asset types, with charts and progress metrics.",
             "github": "https://github.com/mwndl/valorize",
-            "link": "https://valorize.onrender.com"
-        },
-        "project3": {
-            "title": "YT Custom Player",
-            "description": "An npm package for customizing and styling the YouTube player in React applications. It allows developers to embed YouTube videos with customizable properties such as start/end time, autoplay, mute, fullscreen mode, and more, offering a tailored video player experience.",
-            "npm": "https://www.npmjs.com/package/yt-custom-player"
+            "link": "https://valorize.onrender.com",
+            "learnMore": "Learn More",
+            "details": {
+                "title": "Valorize - Fixed Income Investment Simulator",
+                "description": "A powerful tool for simulating and analyzing fixed-income investments. The application supports various investment types and provides detailed metrics and visualizations to help users make informed investment decisions.",
+                "features": [
+                    "Support for multiple investment types",
+                    "Interactive charts and graphs",
+                    "Monthly progress tracking",
+                    "Investment comparison tools",
+                    "Detailed metrics and analysis",
+                    "Responsive design"
+                ],
+                "techStack": {
+                    "title": "Tech Stack",
+                    "frontend": "React, TypeScript, Chart.js",
+                    "styling": "Tailwind CSS",
+                    "deployment": "Render"
+                }
+            }
         }
     },
     "contact": {
