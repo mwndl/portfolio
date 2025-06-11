@@ -1,15 +1,26 @@
 'use client';
 
+import { useState } from 'react';
 import styles from './styles.module.css';
 import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub, FaInfoCircle } from 'react-icons/fa';
+import ProjectDetailsDialog from './ProjectDetailsDialog';
 
 export default function Projects() {
   const { t } = useTranslation();
   const [containerRef, isVisible] = useIntersectionObserver();
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const projectKeys = ['project1', 'project2', 'project3'];
+
+  const handleLearnMore = (projectKey) => {
+    setSelectedProject(projectKey);
+  };
+
+  const handleCloseDialog = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <section id="projects" className={styles.section}>
@@ -60,6 +71,14 @@ export default function Projects() {
                 </div>
 
                 <div className={styles.links}>
+                  <button
+                    onClick={() => handleLearnMore(key)}
+                    className={`${styles.iconLink} ${isVisible ? styles.fadeInUp : ''}`}
+                    style={{ animationDelay: `${baseDelay + 0.3}s` }}
+                    aria-label="Learn More"
+                  >
+                    <FaInfoCircle size={20} />
+                  </button>
                   {hasGithub && (
                     <a
                       href={github}
@@ -90,6 +109,13 @@ export default function Projects() {
           })}
         </div>
       </div>
+
+      {selectedProject && (
+        <ProjectDetailsDialog
+          projectKey={selectedProject}
+          onClose={handleCloseDialog}
+        />
+      )}
     </section>
   );
 }
