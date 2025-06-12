@@ -45,9 +45,11 @@ export default function Projects() {
             const description = t(`projects.${key}.description`);
             const github = t(`projects.${key}.github`);
             const link = t(`projects.${key}.link`);
+            const learnMore = t(`projects.${key}.learnMore`);
 
             const hasGithub = github && github !== `projects.${key}.github`;
             const hasLink = link && link !== `projects.${key}.link`;
+            const hasLearnMore = learnMore && learnMore !== `projects.${key}.learnMore`;
 
             return (
               <div
@@ -71,14 +73,16 @@ export default function Projects() {
                 </div>
 
                 <div className={styles.links}>
-                  <button
-                    onClick={() => handleLearnMore(key)}
-                    className={`${styles.iconLink} ${isVisible ? styles.fadeInUp : ''}`}
-                    style={{ animationDelay: `${baseDelay + 0.3}s` }}
-                    aria-label="Learn More"
-                  >
-                    <FaInfoCircle size={20} />
-                  </button>
+                  {hasLearnMore && (
+                    <button
+                      onClick={() => handleLearnMore(key)}
+                      className={`${styles.iconLink} ${isVisible ? styles.fadeInUp : ''}`}
+                      style={{ animationDelay: `${baseDelay + 0.3}s` }}
+                      aria-label="Learn More"
+                    >
+                      <FaInfoCircle size={20} />
+                    </button>
+                  )}
                   {hasGithub && (
                     <a
                       href={github}
