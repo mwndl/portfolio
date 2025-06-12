@@ -98,44 +98,36 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
         </div>
 
         {projectKey === 'project1' && (
-          <div 
-            className={styles.mockImages}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <button
-              onClick={handlePrevious}
-              className={styles.navButton}
-              aria-label="Previous image"
-            >
-              <FaChevronLeft size={20} />
-            </button>
-
+          <div className={styles.mockImages}>
             <div className={styles.mockImageContainer}>
               <Image
                 src={mockImages[currentImageIndex]}
-                alt={`AuthKit Mock ${currentImageIndex + 1}`}
+                alt="AuthKit Screenshot"
                 fill
                 className={styles.mockImage}
                 priority
               />
             </div>
-
             <button
+              className={`${styles.navButton} ${styles.prevButton}`}
+              onClick={handlePrevious}
+              aria-label="Previous image"
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              className={`${styles.navButton} ${styles.nextButton}`}
               onClick={handleNext}
-              className={styles.navButton}
               aria-label="Next image"
             >
-              <FaChevronRight size={20} />
+              <FaChevronRight />
             </button>
-
             <div className={styles.imageDots}>
               {mockImages.map((_, index) => (
                 <button
                   key={index}
+                  className={`${styles.dot} ${currentImageIndex === index ? styles.active : ''}`}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`${styles.dot} ${index === currentImageIndex ? styles.activeDot : ''}`}
                   aria-label={`Go to image ${index + 1}`}
                 />
               ))}
