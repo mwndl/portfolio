@@ -61,57 +61,56 @@
         "title": "Main Projects",
         "project1": {
             "title": "AuthKit",
-            "description": "A robust fullstack authentication solution built with Java and NextJS. Features a comprehensive authentication system including login/registration flows, password recovery, protected areas, 2FA support, Passkeys integration, email notifications, and real-time WebSocket notifications. Designed for enterprise-level applications requiring secure and scalable authentication.",
-            "github": "https://github.com/mwndl/authkit",
+            "description": "A fullstack enterprise authentication solution with JWT refresh token support, active session management, 2FA, and Passkeys. Includes email verification and account recovery, real-time in-app notifications via WebSocket, protected routes, and more.",
             "learnMore": "Learn More",
             "demo": "Open Demo",
-            "demoUrl": "https://authkit-demo.render.com",
+            "demoUrl": "https://authkit-demo.onrender.com",
             "details": {
                 "title": "AuthKit - Enterprise Authentication Solution",
-                "description": "AuthKit is a comprehensive authentication solution designed for enterprise-level applications. Built with modern technologies and best practices, it provides a secure and scalable foundation for user authentication and authorization.",
+                "description": "AuthKit is a comprehensive authentication solution designed for enterprise-level applications. Built with modern technologies and best practices, it provides a secure and scalable foundation for user authentication and authorization. The project is fully functional and ready to use, serving as a base template for enterprise systems where only the creation of specific pages and dashboards is needed.",
                 "features": {
+                    "title": "Main Features",
                     "security": {
                         "title": "Security & Authentication",
                         "items": [
-                            "JWT with refresh tokens and 2FA",
-                            "Passkeys and passwordless auth",
-                            "Progressive login blocking",
-                            "Session management and monitoring"
+                            "Persistent JWT with refresh tokens for session control",
+                            "TOTP-based 2FA with authenticator apps",
+                            "Passkeys for passwordless authentication",
+                            "Progressive login blocking with IP tracking"
                         ]
                     },
                     "userExperience": {
                         "title": "User Experience",
                         "items": [
-                            "Email and real-time notifications",
-                            "Multi-language support (i18n)",
-                            "Responsive and accessible UI",
-                            "Toast messages and error handling"
+                            "Real-time notifications via WebSocket",
+                            "Multi-language support with i18n",
+                            "Responsive and accessible UI components",
+                            "Standardized error handling with toast messages"
                         ]
                     },
                     "management": {
                         "title": "Account Management",
                         "items": [
-                            "Account creation and recovery",
-                            "Role-based access control",
-                            "Protected routes and validation",
-                            "30-day account recovery period"
+                            "Account creation with email verification",
+                            "Role-based access control (RBAC)",
+                            "Protected routes with middleware validation",
+                            "Account deletion with 30-day recovery period"
                         ]
                     }
                 },
                 "techStack": {
                     "title": "Tech Stack",
-                    "backend": "Java, Spring Boot, Spring Security",
-                    "frontend": "Next.js, TypeScript, Tailwind CSS",
-                    "database": "PostgreSQL",
-                    "infrastructure": "Docker, AWS"
+                    "backend": "Java 21, Spring Boot, Spring Security, Spring Data JPA, Spring WebSocket, Spring Mail, Lombok, Maven",
+                    "frontend": "Next.js 15.2, React 19, TypeScript, Tailwind CSS, i18n, Axios, SockJS, STOMP.js",
+                    "database": "AWS RDS, PostgreSQL, MySQL",
+                    "infrastructure": "Docker, AWS Elastic Beanstalk, AWS SES"
                 }
             }
         },
         "project2": {
             "title": "Finapp API",
-            "description": "Robust RESTful API built with Java and Spring Boot for personal finance management. Features JWT authentication with refresh tokens, collaborative goals between users, income and expense tracking, real-time balance calculation, and password recovery via email.",
+            "description": "Robust Java RESTful API with Spring Boot for personal finance management. JWT authentication with refresh token, collaborative goals between users, deposits with entries and exits, real-time balance calculation, and password recovery via email.",
             "github": "https://github.com/mwndl/finapp_api",
-            "learnMore": "Learn More",
             "details": {
                 "title": "Finapp API - Personal Finance Management",
                 "description": "A comprehensive API for managing personal finances, allowing users to track their income, expenses, and savings goals. The system supports collaborative financial goals and provides real-time balance calculations.",
@@ -134,16 +133,15 @@
         },
         "project3": {
             "title": "Valorize",
-            "description": "Fixed-income investment simulator supporting major asset types, with charts and progress metrics.",
+            "description": "A fixed income investment simulator supporting the main types of investments: fixed rate, post-fixed, and IPCA-indexed. The tool includes complete metrics, charts, and a monthly progress table.",
             "github": "https://github.com/mwndl/valorize",
             "link": "https://valorize.onrender.com",
-            "learnMore": "Learn More",
             "details": {
                 "title": "Valorize - Fixed Income Investment Simulator",
-                "description": "A powerful tool for simulating and analyzing fixed-income investments. The application supports various investment types and provides detailed metrics and visualizations to help users make informed investment decisions.",
+                "description": "A powerful tool for simulating and analyzing fixed income investments. The application supports various investment types and provides detailed metrics and visualizations to help users make informed investment decisions.",
                 "features": [
                     "Support for multiple investment types",
-                    "Interactive charts and graphs",
+                    "Interactive charts and visualizations",
                     "Monthly progress tracking",
                     "Investment comparison tools",
                     "Detailed metrics and analysis",
