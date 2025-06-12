@@ -90,9 +90,11 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
           ×
         </button>
 
-        <h2 className={styles.dialogTitle}>{details.title}</h2>
-        <div className={styles.dialogDescription}>
-          {t(`projects.${projectKey}.details.description`)}
+        <div className={styles.dialogHeader}>
+          <h2 className={styles.dialogTitle}>{details.title}</h2>
+          <div className={styles.dialogDescription}>
+            {t(`projects.${projectKey}.details.description`)}
+          </div>
         </div>
 
         {projectKey === 'project1' && (
@@ -142,9 +144,11 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
         )}
 
         <div className={styles.featuresSection}>
-          <h3 className={styles.sectionTitle}>{t('projects.features')}</h3>
+          <h3 className={styles.techStackTitle}>{t(`projects.${projectKey}.details.features.title`)}</h3>
           <div className={styles.featuresGrid}>
-            {Object.entries(t(`projects.${projectKey}.details.features`, { returnObjects: true })).map(([category, data]) => (
+            {Object.entries(t(`projects.${projectKey}.details.features`, { returnObjects: true }))
+              .filter(([key]) => key !== 'title')
+              .map(([category, data]) => (
               <div key={category} className={styles.featureCategory}>
                 <h4 className={styles.categoryTitle}>{data.title}</h4>
                 <ul className={styles.featureList}>
@@ -161,13 +165,22 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
         </div>
 
         <div className={styles.techStackSection}>
-          <h3 className={styles.sectionTitle}>{details.techStack.title}</h3>
+          <h3 className={styles.techStackTitle}>{details.techStack.title}</h3>
           <div className={styles.techStack}>
             {Object.entries(details.techStack)
               .filter(([key]) => key !== 'title')
               .map(([key, value]) => (
                 <div key={key} className={styles.techStackItem}>
-                  <strong>{key}:</strong> {value}
+                  <div className={styles.techStackCategory}>
+                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                  </div>
+                  <div className={styles.techStackList}>
+                    {value.split(', ').map((tech, index) => (
+                      <span key={index} className={styles.techStackTech}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
           </div>
