@@ -48,7 +48,7 @@
             "role": "Fundador & Desenvolvedor Full Stack",
             "company": "Fintegra",
             "date": "Nov 2025 - Atual",
-            "description": "Desenvolvo um SaaS do zero, atuando em front-end, back-end e arquitetura. Construí a interface com Next.js, TypeScript e Tailwind, desenvolvi o back-end Java com PostgreSQL em arquitetura multi-tenant, implementei assinaturas com Stripe e integrações externas, além de APIs REST e um chatbot com IA integrado ao WhatsApp usando LLMs, webhooks e filas para processamento assíncrono."
+            "description": "Desenvolvi um SaaS do zero e sigo atuando ativamente na evolução do produto em produção, com responsabilidade sobre front-end, back-end e arquitetura. Construí a interface com Next.js, TypeScript e Tailwind, desenvolvi o back-end em Java com PostgreSQL em arquitetura multi-tenant, implementei assinaturas com Stripe e integrações externas, além de APIs REST e um chatbot com IA integrado ao WhatsApp usando LLMs, webhooks e filas para processamento assíncrono."
         },
         "item2": {
             "role": "Desenvolvedor Full Stack (PJ)",
