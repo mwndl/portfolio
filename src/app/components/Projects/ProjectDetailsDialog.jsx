@@ -18,13 +18,17 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
     '/images/authkit_mock2.png',
     '/images/authkit_mock3.png',
   ];
+  const galleryProjects = {
+    project2: mockImages,
+  };
+  const projectImages = galleryProjects[projectKey] || [];
 
   const handlePrevious = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? mockImages.length - 1 : prev - 1));
+    setCurrentImageIndex((prev) => (prev === 0 ? projectImages.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentImageIndex((prev) => (prev === mockImages.length - 1 ? 0 : prev + 1));
+    setCurrentImageIndex((prev) => (prev === projectImages.length - 1 ? 0 : prev + 1));
   };
 
   const handleTouchStart = (e) => {
@@ -76,8 +80,15 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
   }, [onClose]);
 
   const details = t(`projects.${projectKey}.details`, { returnObjects: true });
-  const hasDemo = projectKey === 'project1';
   const demoUrl = t(`projects.${projectKey}.demoUrl`);
+  const hasGallery = projectImages.length > 0;
+  const hasDemo = demoUrl && demoUrl !== `projects.${projectKey}.demoUrl`;
+  const features = details?.features;
+  const hasStructuredFeatures =
+    features &&
+    typeof features === 'object' &&
+    !Array.isArray(features) &&
+    Object.keys(features).length > 0;
 
   return (
     <div className={styles.dialogOverlay} onClick={onClose}>
@@ -97,12 +108,12 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
           </div>
         </div>
 
-        {projectKey === 'project1' && (
+        {hasGallery && (
           <div className={styles.mockImages}>
             <div className={styles.mockImageContainer}>
               <Image
-                src={mockImages[currentImageIndex]}
-                alt="AuthKit Screenshot"
+                src={projectImages[currentImageIndex]}
+                alt={`${t(`projects.${projectKey}.title`)} Screenshot`}
                 fill
                 className={styles.mockImage}
                 priority
@@ -123,7 +134,7 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
               <FaChevronRight />
             </button>
             <div className={styles.imageDots}>
-              {mockImages.map((_, index) => (
+              {projectImages.map((_, index) => (
                 <button
                   key={index}
                   className={`${styles.dot} ${currentImageIndex === index ? styles.active : ''}`}
@@ -135,26 +146,28 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
           </div>
         )}
 
-        <div className={styles.featuresSection}>
-          <h3 className={styles.techStackTitle}>{t(`projects.${projectKey}.details.features.title`)}</h3>
-          <div className={styles.featuresGrid}>
-            {Object.entries(t(`projects.${projectKey}.details.features`, { returnObjects: true }))
-              .filter(([key]) => key !== 'title')
-              .map(([category, data]) => (
-              <div key={category} className={styles.featureCategory}>
-                <h4 className={styles.categoryTitle}>{data.title}</h4>
-                <ul className={styles.featureList}>
-                  {data.items.map((feature, index) => (
-                    <li key={index} className={styles.featureItem}>
-                      <span className={styles.featureIcon}>•</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        {hasStructuredFeatures && (
+          <div className={styles.featuresSection}>
+            <h3 className={styles.techStackTitle}>{t(`projects.${projectKey}.details.features.title`)}</h3>
+            <div className={styles.featuresGrid}>
+              {Object.entries(t(`projects.${projectKey}.details.features`, { returnObjects: true }))
+                .filter(([key]) => key !== 'title')
+                .map(([category, data]) => (
+                <div key={category} className={styles.featureCategory}>
+                  <h4 className={styles.categoryTitle}>{data.title}</h4>
+                  <ul className={styles.featureList}>
+                    {data.items.map((feature, index) => (
+                      <li key={index} className={styles.featureItem}>
+                        <span className={styles.featureIcon}>•</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className={styles.techStackSection}>
           <h3 className={styles.techStackTitle}>{details.techStack.title}</h3>
@@ -186,7 +199,7 @@ export default function ProjectDetailsDialog({ projectKey, onClose }) {
               rel="noopener noreferrer"
               className={styles.demoButton}
             >
-              {t('projects.project1.demo')}
+              {t(`projects.${projectKey}.demo`)}
             </a>
           </div>
         )}

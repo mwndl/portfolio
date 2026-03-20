@@ -45,27 +45,32 @@
     "experience": {
         "title": "Experience",
         "item3": {
-            "role": "Full Stack Developer",
-            "company": "Fredy Marketing",
-            "date": "2025 - present",
-            "description": "I work as a full stack developer at Fredy Marketing, a digital marketing company that offers solutions for small and medium-sized businesses. My role is to develop and maintain the company's website, as well as internal projects like a dynamic Canva-style editor for social media post editing."
+            "role": "Founder & Full Stack Developer",
+            "company": "Fintegra",
+            "date": "Nov 2025 - Present",
+            "description": "I am building a SaaS from scratch across frontend, backend, and architecture. I created the interface with Next.js, TypeScript, and Tailwind, developed the Java and PostgreSQL backend with a multi-tenant architecture, implemented Stripe subscriptions and external integrations, and delivered REST APIs plus an AI chatbot integrated with WhatsApp using LLMs, webhooks, and queue-based asynchronous processing."
         },
         "item2": {
-            "role": "Projects Committee Member",
-            "company": "LATIM",
-            "date": "2024 - 2025",
-            "description": "I work on the ideation, planning, and execution of academic and multidisciplinary software projects. As a member of LATIM's Projects Committee, I collaborate with diverse teams to develop technological solutions—from requirements gathering to the delivery of functional systems."
+            "role": "Full Stack Developer (Contractor)",
+            "company": "Fredy Marketing",
+            "date": "Aug 2025 - Oct 2025",
+            "description": "I worked with a frontend focus using Next.js and Tailwind CSS, leading the migration from a legacy interface to a new modern application. I also built reusable and responsive components, created a full Canva-style post editor, and worked with Git version control and agile routines using Scrum and Kanban."
         },
         "item1": {
-            "role": "Reserve Second Lieutenant",
-            "company": "Brazilian Army",
-            "date": "2021",
-            "description": "In 2021, I completed the Reserve Officers Training Center (NPOR), where I developed leadership, discipline, teamwork, and decision-making skills under pressure. Throughout the year, I received both practical and theoretical training in tactics, military organization, and logistics, culminating in my appointment as an Reserve Second Lieutenant."
+            "role": "Projects Committee Member",
+            "company": "LATIM",
+            "date": "Jul 2024 - Jul 2025",
+            "description": "I participated in the planning and execution of multidisciplinary technology projects, collaborating with teams to build practical solutions while applying software development and project organization concepts."
         }
     },
     "projects": {
         "title": "Main Projects",
         "project1": {
+            "title": "Fintegra",
+            "description": "A personal finance platform with automatic categorization, account and card tracking, budgets, financial goals, and invite-based sharing, ideal for couples and collaborative money management.",
+            "link": "https://fintegra.app"
+        },
+        "project2": {
             "title": "AuthKit",
             "description": "A fullstack enterprise authentication solution with JWT refresh token support, active session management, 2FA, and Passkeys. Includes email verification and account recovery, real-time in-app notifications via WebSocket, protected routes, and more.",
             "learnMore": "Learn More",
@@ -110,30 +115,6 @@
                     "frontend": "Next.js 15.2, React 19, TypeScript, Tailwind CSS, i18n, Axios, SockJS, STOMP.js",
                     "database": "AWS RDS, PostgreSQL, MySQL",
                     "infrastructure": "Docker, AWS Elastic Beanstalk, AWS SES"
-                }
-            }
-        },
-        "project2": {
-            "title": "Finapp API",
-            "description": "Robust Java RESTful API with Spring Boot for personal finance management. JWT authentication with refresh token, collaborative goals between users, deposits with entries and exits, real-time balance calculation, and password recovery via email.",
-            "github": "https://github.com/mwndl/finapp_api",
-            "details": {
-                "title": "Finapp API - Personal Finance Management",
-                "description": "A comprehensive API for managing personal finances, allowing users to track their income, expenses, and savings goals. The system supports collaborative financial goals and provides real-time balance calculations.",
-                "features": [
-                    "JWT authentication with refresh tokens",
-                    "Collaborative financial goals",
-                    "Income and expense tracking",
-                    "Real-time balance calculation",
-                    "Email notifications for important events",
-                    "RESTful API design",
-                    "Comprehensive documentation"
-                ],
-                "techStack": {
-                    "title": "Tech Stack",
-                    "backend": "Java, Spring Boot, Spring Security",
-                    "database": "PostgreSQL",
-                    "infrastructure": "Docker"
                 }
             }
         },
