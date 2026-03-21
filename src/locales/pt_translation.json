@@ -13,8 +13,8 @@
         "name": "Marcos Wiendl",
         "role": "Desenvolvedor Full Stack",
         "title": "Sobre Mim",
-        "paragraph1": "Olá! Me chamo Marcos, tenho {{age}} anos, sou desenvolvedor full stack focado em criar soluções digitais que unem interfaces intuitivas a back-ends robustos. Gosto de resolver problemas com criatividade e entregar valor real aos usuários.",
-        "paragraph2": "Me formei recentemente em Sistemas para Internet e estou em busca de uma oportunidade para aplicar todo o conhecimento que adquiri. Atualmente, curso um MBA em Full Stack Web Development. No tempo livre, exploro novas tecnologias, crio projetos pessoais e acompanho as tendências do setor."
+        "paragraph1": "Olá! Me chamo Marcos, tenho {{age}} anos e sou desenvolvedor full stack com experiência na criação de soluções digitais que unem interfaces intuitivas a back-ends robustos. Gosto de transformar problemas complexos em produtos funcionais, com foco em usabilidade, performance e valor real para o usuário.",
+        "paragraph2": "Atuo no desenvolvimento de produtos e sistemas web, participando de etapas que vão da arquitetura à implementação de funcionalidades em produção. Sou formado em Sistemas para Internet e atualmente curso um MBA em Full Stack Web Development, mantendo uma atuação prática e constante na evolução de projetos reais."
     },
     "shortcuts": {
         "resume": "Currículo",

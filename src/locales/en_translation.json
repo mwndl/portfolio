@@ -13,8 +13,8 @@
         "name": "Marcos Wiendl",
         "role": "Full Stack Developer",
         "title": "About Me",
-        "paragraph1": "Hello! I'm Marcos, {{age}} years old. I'm a full stack developer focused on creating digital solutions that combine intuitive interfaces with robust back-ends. I enjoy solving problems with creativity and delivering real value to users.",
-        "paragraph2": "I recently graduated in Web Development and I'm looking for an opportunity to apply all the knowledge I've acquired. I'm currently pursuing an MBA in Full Stack Web Development. In my free time, I explore new technologies, create personal projects, and follow industry trends."
+        "paragraph1": "Hello! I'm Marcos, {{age}} years old, and I'm a full stack developer with experience building digital solutions that combine intuitive interfaces with robust backends. I enjoy turning complex problems into functional products, with a focus on usability, performance, and real value for users.",
+        "paragraph2": "I work on the development of digital products and web systems, contributing from architecture to production-ready feature implementation. I hold a degree in Internet Systems and I am currently pursuing an MBA in Full Stack Web Development, maintaining a hands-on and consistent role in the evolution of real-world projects."
     },
     "shortcuts": {
         "resume": "Resume",
