@@ -13,8 +13,8 @@
         "name": "Marcos Wiendl",
         "role": "Desenvolvedor Full Stack",
         "title": "Sobre Mim",
-        "paragraph1": "Olá! Me chamo Marcos, tenho {{age}} anos e sou desenvolvedor full stack com experiência na criação de soluções digitais que unem interfaces intuitivas a back-ends robustos. Gosto de transformar problemas complexos em produtos funcionais, com foco em usabilidade, performance e valor real para o usuário.",
-        "paragraph2": "Atuo no desenvolvimento de produtos e sistemas web, participando de etapas que vão da arquitetura à implementação de funcionalidades em produção. Sou formado em Sistemas para Internet e atualmente curso um MBA em Full Stack Web Development, mantendo uma atuação prática e constante na evolução de projetos reais."
+        "paragraph1": "Olá! Me chamo Marcos, tenho {{age}} anos e sou desenvolvedor full stack com experiência na criação de soluções digitais que unem interfaces intuitivas a back-ends robustos.",
+        "paragraph2": "Atuo no desenvolvimento de produtos e sistemas web, participando de etapas que vão da arquitetura à implementação de funcionalidades em produção. Sou formado em Sistemas para Internet e atualmente curso um MBA em Full Stack Web Development."
     },
     "shortcuts": {
         "resume": "Currículo",
@@ -48,25 +48,25 @@
             "role": "Desenvolvedor Full Stack Jr.",
             "company": "Tely",
             "date": "Jun 2026 - Atual",
-            "description": "Atuo no desenvolvimento de soluções web, contribuindo com a criação e evolução de funcionalidades em produção, com foco em interfaces, integrações e manutenção de sistemas."
+            "description": "Colaboro na construção e sustentação de sistemas web, priorizando a entrega de novas funcionalidades, o aprimoramento de interfaces e a integridade de APIs."
         },
         "item3": {
             "role": "Desenvolvedor Full Stack",
             "company": "Fintegra",
             "date": "Nov 2025 - Atual",
-            "description": "Desenvolvi um SaaS do zero e sigo atuando ativamente na evolução do produto em produção, com responsabilidade sobre front-end, back-end e arquitetura. Construí a interface com Next.js, TypeScript e Tailwind, desenvolvi o back-end em Java com PostgreSQL em arquitetura multi-tenant, implementei assinaturas com Stripe e integrações externas, além de APIs REST e um chatbot com IA integrado ao WhatsApp usando LLMs, webhooks e filas para processamento assíncrono."
+            "description": "Idealizei, projetei e desenvolvi uma plataforma SaaS, atuando em todas as camadas da aplicação. Implementei autenticação, controle de acesso, gestão de assinaturas e processamento de pagamentos recorrentes com Stripe. Também criei um chatbot com Inteligência Artificial integrado ao WhatsApp, utilizando LLMs, webhooks e processamento assíncrono baseado em filas."
         },
         "item2": {
             "role": "Desenvolvedor Full Stack (PJ)",
             "company": "Fredy Marketing",
             "date": "Ago 2025 - Out 2025",
-            "description": "Atuei com foco em front-end usando Next.js e Tailwind CSS, liderando a migração da interface legada para uma nova aplicação moderna. Também desenvolvi componentes reutilizáveis e responsivos, criei um editor completo de postagens estilo Canva e trabalhei com versionamento em Git e rotinas ágeis com Scrum e Kanban."
+            "description": "Conduzi a migração da interface legada para uma arquitetura moderna, melhorando a experiência do usuário e a manutenibilidade do sistema. Desenvolvi um editor visual completo para criação e edição de postagens, inspirado na experiência de ferramentas como Canva. Também colaborei com a equipe utilizando Git e metodologias ágeis."
         },
         "item1": {
             "role": "Membro da Comissão de Projetos",
             "company": "LATIM",
             "date": "Jul 2024 - Jul 2025",
-            "description": "Participei do planejamento e da execução de projetos multidisciplinares em tecnologia, colaborando com equipes para desenvolver soluções práticas e aplicando conceitos de desenvolvimento de software e organização de projetos."
+            "description": "Participei do planejamento e da execução de projetos multidisciplinares em tecnologia, colaborando com equipes para desenvolver soluções práticas e aplicar conceitos de desenvolvimento de software e organização de projetos."
         }
     },
     "projects": {

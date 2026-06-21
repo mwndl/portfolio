@@ -13,8 +13,8 @@
         "name": "Marcos Wiendl",
         "role": "Full Stack Developer",
         "title": "About Me",
-        "paragraph1": "Hello! I'm Marcos, {{age}} years old, and I'm a full stack developer with experience building digital solutions that combine intuitive interfaces with robust backends. I enjoy turning complex problems into functional products, with a focus on usability, performance, and real value for users.",
-        "paragraph2": "I work on the development of digital products and web systems, contributing from architecture to production-ready feature implementation. I hold a degree in Internet Systems and I am currently pursuing an MBA in Full Stack Web Development, maintaining a hands-on and consistent role in the evolution of real-world projects."
+        "paragraph1": "Hello! I'm Marcos, {{age}} years old, and I'm a full stack developer with experience building digital solutions that combine intuitive interfaces with robust backends.",
+        "paragraph2": "I work on digital products and web systems, contributing from architecture to production feature implementation. I hold a degree in Internet Systems and I am currently pursuing an MBA in Full Stack Web Development."
     },
     "shortcuts": {
         "resume": "Resume",
@@ -48,25 +48,25 @@
             "role": "Junior Full Stack Developer",
             "company": "Tely",
             "date": "Jun 2026 - Present",
-            "description": "I work on the development of web solutions, contributing to the creation and evolution of production features with a focus on interfaces, integrations, and system maintenance."
+            "description": "I collaborate on the construction and maintenance of web systems, prioritizing the delivery of new features, interface improvements, and API integrity."
         },
         "item3": {
             "role": "Full Stack Developer",
             "company": "Fintegra",
             "date": "Nov 2025 - Present",
-            "description": "I built a SaaS from scratch and remain actively involved in evolving the product now that it is in production, owning frontend, backend, and architecture. I created the interface with Next.js, TypeScript, and Tailwind, developed the Java and PostgreSQL backend with a multi-tenant architecture, implemented Stripe subscriptions and external integrations, and delivered REST APIs plus an AI chatbot integrated with WhatsApp using LLMs, webhooks, and queue-based asynchronous processing."
+            "description": "I designed and built a SaaS platform, working across every layer of the application. I implemented authentication, access control, subscription management, and recurring payments with Stripe. I also created an AI chatbot integrated with WhatsApp, using LLMs, webhooks, and queue-based asynchronous processing."
         },
         "item2": {
             "role": "Full Stack Developer (Contractor)",
             "company": "Fredy Marketing",
             "date": "Aug 2025 - Oct 2025",
-            "description": "I worked with a frontend focus using Next.js and Tailwind CSS, leading the migration from a legacy interface to a new modern application. I also built reusable and responsive components, created a full Canva-style post editor, and worked with Git version control and agile routines using Scrum and Kanban."
+            "description": "I led the migration from a legacy interface to a modern architecture, improving user experience and system maintainability. I built a complete visual editor for creating and editing posts, inspired by tools like Canva. I also collaborated with the team using Git and agile methods."
         },
         "item1": {
             "role": "Projects Committee Member",
             "company": "LATIM",
             "date": "Jul 2024 - Jul 2025",
-            "description": "I participated in the planning and execution of multidisciplinary technology projects, collaborating with teams to build practical solutions while applying software development and project organization concepts."
+            "description": "I participated in the planning and execution of multidisciplinary technology projects, collaborating with teams to build practical solutions and apply software development and project organization concepts."
         }
     },
     "projects": {
