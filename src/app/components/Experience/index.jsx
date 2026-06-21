@@ -8,7 +8,7 @@ export default function Experience() {
   const { t } = useTranslation();
   const [containerRef, isVisible] = useIntersectionObserver();
 
-  const items = ['item3', 'item2', 'item1'];
+  const items = ['item4', 'item3', 'item2', 'item1'];
 
   console.log('Experience visible:', isVisible);
 

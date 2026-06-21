@@ -44,8 +44,14 @@
     },
     "experience": {
         "title": "Experience",
+        "item4": {
+            "role": "Junior Full Stack Developer",
+            "company": "Tely",
+            "date": "Jun 2026 - Present",
+            "description": "I work on the development of web solutions, contributing to the creation and evolution of production features with a focus on interfaces, integrations, and system maintenance."
+        },
         "item3": {
-            "role": "Founder & Full Stack Developer",
+            "role": "Full Stack Developer",
             "company": "Fintegra",
             "date": "Nov 2025 - Present",
             "description": "I built a SaaS from scratch and remain actively involved in evolving the product now that it is in production, owning frontend, backend, and architecture. I created the interface with Next.js, TypeScript, and Tailwind, developed the Java and PostgreSQL backend with a multi-tenant architecture, implemented Stripe subscriptions and external integrations, and delivered REST APIs plus an AI chatbot integrated with WhatsApp using LLMs, webhooks, and queue-based asynchronous processing."
