@@ -118,7 +118,7 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Category Segmented Control */}
-        <div className="flex justify-center overflow-x-auto max-w-full pb-2 scrollbar-none">
+        <div className="w-full overflow-x-auto px-1 flex justify-start sm:justify-center scrollbar-none pb-2">
           <SegmentedControl
             layoutId="skills-category-pill"
             options={filterOptions}
