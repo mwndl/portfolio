@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
@@ -19,9 +19,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   const [navAvatar, setNavAvatar] = useState(
     "https://www.gravatar.com/avatar/d87fbc718cafb7c4a7ce26efd1f227cc?s=200"
   );
+  const isClickScrollingRef = useRef(false);
+  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
+      if (isClickScrollingRef.current) return;
+
       const sections = ["about", "skills", "experience"];
       const scrollPos = window.scrollY + 200;
 
@@ -39,7 +43,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+    };
   }, []);
 
   const navItems = [
@@ -50,10 +57,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
+    isClickScrollingRef.current = true;
+
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+    }
+
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
+
+    clickTimeoutRef.current = setTimeout(() => {
+      isClickScrollingRef.current = false;
+    }, 1000);
   };
 
   return (
