@@ -48,7 +48,7 @@ export const Experience: React.FC = () => {
 
                     <div className="flex flex-wrap items-center gap-3 text-xs font-medium text-neutral-500">
                       <span className="flex items-center gap-1 font-semibold text-neutral-700">
-                        <Building2 className="w-3.5 h-3.5 text-blue-500" />
+                        <Building2 className="w-3.5 h-3.5 text-neutral-400" />
                         {item.company}
                       </span>
                       <span>•</span>
