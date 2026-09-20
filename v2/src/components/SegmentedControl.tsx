@@ -26,8 +26,32 @@ export function SegmentedControl<T extends string>({
   layoutId = "segmented-pill",
   className,
 }: SegmentedControlProps<T>) {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  const handleOptionClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    optionId: T
+  ) => {
+    onChange(optionId);
+
+    const container = containerRef.current;
+    const button = e.currentTarget;
+    if (container && button) {
+      const containerWidth = container.clientWidth;
+      const buttonLeft = button.offsetLeft;
+      const buttonWidth = button.offsetWidth;
+      const targetScrollLeft = buttonLeft - containerWidth / 2 + buttonWidth / 2;
+
+      container.scrollTo({
+        left: targetScrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div
+      ref={containerRef}
       className={clsx(
         "flex items-center gap-1 p-1 rounded-full bg-neutral-200/70 backdrop-blur-md border border-neutral-300/40 select-none max-w-full overflow-x-auto scrollbar-none shrink-0",
         className
@@ -38,7 +62,7 @@ export function SegmentedControl<T extends string>({
         return (
           <button
             key={option.id}
-            onClick={() => onChange(option.id)}
+            onClick={(e) => handleOptionClick(e, option.id)}
             className="relative px-3 sm:px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold rounded-full transition-colors focus:outline-none cursor-pointer flex items-center gap-1.5 z-10 shrink-0 whitespace-nowrap"
           >
             {isActive && (
