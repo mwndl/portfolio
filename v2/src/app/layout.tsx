@@ -4,7 +4,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Marcos Wiendl — Engenheiro de Software",
+  title: "Marcos Wiendl",
   description:
     "Portfólio de Marcos Wiendl. Engenheiro de Software especializado em Java, Spring Boot, React, Next.js e TypeScript.",
 };
