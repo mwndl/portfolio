@@ -57,17 +57,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   };
 
   return (
-    <header className="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+    <header className="fixed top-3 sm:top-4 inset-x-0 z-50 flex justify-center px-2 sm:px-4 pointer-events-none">
       <motion.nav
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={appleSnappySpring}
-        className="glass-dock squircle px-3.5 py-2 flex items-center gap-3 md:gap-5 pointer-events-auto transition-all duration-300 max-w-full overflow-x-auto"
+        className="glass-dock squircle px-2.5 sm:px-3.5 py-1.5 sm:py-2 flex items-center gap-2 sm:gap-4 pointer-events-auto transition-all duration-300 max-w-full"
       >
         {/* Brand Gravatar Badge */}
         <button
           onClick={() => scrollToSection("about")}
-          className="flex items-center gap-2 font-bold tracking-tight text-[#1d1d1f] px-1.5 cursor-pointer group"
+          className="flex items-center gap-2 font-bold tracking-tight text-[#1d1d1f] px-1 cursor-pointer group shrink-0"
         >
           <div className="relative w-7 h-7 rounded-full overflow-hidden ring-1 ring-neutral-300 shrink-0">
             <Image
@@ -79,22 +79,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               className="object-cover group-hover:scale-110 transition-transform"
             />
           </div>
-          <span className="hidden sm:inline-block text-sm font-semibold tracking-tight">
+          <span className="hidden md:inline-block text-sm font-semibold tracking-tight">
             Marcos Wiendl
           </span>
         </button>
 
-        <div className="h-4 w-[1px] bg-neutral-300/60 hidden sm:block" />
+        <div className="h-4 w-[1px] bg-neutral-300/60 hidden md:block" />
 
         {/* Nav Items */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 sm:gap-1">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="relative px-3 py-1.5 text-xs font-semibold rounded-full transition-colors cursor-pointer text-neutral-600 hover:text-neutral-900"
+                className="relative px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold rounded-full transition-colors cursor-pointer text-neutral-600 hover:text-neutral-900 shrink-0"
               >
                 {isActive && (
                   <motion.div
@@ -109,19 +109,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           })}
         </div>
 
-        <div className="h-4 w-[1px] bg-neutral-300/60" />
+        <div className="h-4 w-[1px] bg-neutral-300/60 shrink-0" />
 
         {/* Controls & Contact */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <LanguageToggle />
           <SpringButton
             variant="primary"
             size="sm"
             onClick={onOpenContact}
-            className="ml-1 hidden xs:inline-flex"
+            className="ml-0.5 px-2.5 sm:px-3 py-1.5 flex items-center gap-1.5"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>{t.nav.contact}</span>
+            <span className="hidden sm:inline">{t.nav.contact}</span>
           </SpringButton>
         </div>
       </motion.nav>

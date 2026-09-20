@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { SegmentedControl, Option } from "./SegmentedControl";
@@ -20,6 +20,8 @@ import {
   Sparkles,
   MessageSquare,
   X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 type CategoryFilter = "all" | "languages" | "frameworks" | "devops" | "security_ai";
@@ -28,6 +30,8 @@ export const Skills: React.FC = () => {
   const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
   const [selectedSkill, setSelectedSkill] = useState<(typeof t.skills.items)[0] | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const filterOptions: Option<CategoryFilter>[] = [
     { id: "all", label: t.skills.categories.all },
@@ -41,6 +45,33 @@ export const Skills: React.FC = () => {
     if (activeCategory === "all") return true;
     return item.category === activeCategory;
   });
+
+  // Reset scroll position when category changes
+  useEffect(() => {
+    setActiveSlide(0);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  }, [activeCategory]);
+
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const { scrollLeft, clientWidth } = scrollContainerRef.current;
+    if (clientWidth > 0) {
+      const newIndex = Math.round(scrollLeft / (clientWidth * 0.75));
+      setActiveSlide(Math.min(Math.max(0, newIndex), filteredItems.length - 1));
+    }
+  };
+
+  const scrollToSlide = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    const cardWidth = scrollContainerRef.current.clientWidth * 0.78;
+    scrollContainerRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
+    setActiveSlide(index);
+  };
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -85,7 +116,7 @@ export const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="py-20 px-4 max-w-5xl mx-auto">
-      <div className="space-y-10">
+      <div className="space-y-8 sm:space-y-10">
         {/* Header */}
         <div className="text-center space-y-3">
           <h2 className="apple-title-lg text-[#1d1d1f]">
@@ -97,7 +128,7 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Category Segmented Control */}
-        <div className="flex justify-center overflow-x-auto max-w-full pb-2">
+        <div className="flex justify-center overflow-x-auto max-w-full pb-2 no-scrollbar">
           <SegmentedControl
             layoutId="skills-category-pill"
             options={filterOptions}
@@ -106,10 +137,88 @@ export const Skills: React.FC = () => {
           />
         </div>
 
-        {/* Skills Cards Grid */}
+        {/* Mobile Touch Swiper Carousel (sm:hidden) */}
+        <div className="block sm:hidden space-y-3">
+          <div className="relative">
+            <div
+              ref={scrollContainerRef}
+              onScroll={handleScroll}
+              className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-4 pt-1 px-1 scrollbar-none scroll-smooth"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredItems.map((item, idx) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={appleElementSpring}
+                    onClick={() => setSelectedSkill(item)}
+                    className="snap-center shrink-0 w-[78vw] max-w-[270px] glass-panel squircle p-5 cursor-pointer flex flex-col justify-between space-y-3 shadow-md border border-neutral-200/90 select-none active:scale-95 transition-transform"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="p-2.5 rounded-2xl bg-neutral-100/90 border border-neutral-200/50">
+                        {getIcon(item.icon)}
+                      </div>
+                      <span className="text-[10px] font-semibold tracking-wide text-neutral-400 uppercase">
+                        {item.category}
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="apple-title-md text-[#1d1d1f]">
+                        {item.name}
+                      </h3>
+                      <p className="text-xs text-neutral-500 line-clamp-2 mt-1 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Carousel Pagination Dots & Navigation Controls */}
+          <div className="flex items-center justify-between px-2 pt-1">
+            <button
+              onClick={() => scrollToSlide(Math.max(0, activeSlide - 1))}
+              disabled={activeSlide === 0}
+              className="p-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-1.5">
+              {filteredItems.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => scrollToSlide(idx)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeSlide === idx
+                      ? "w-4 bg-blue-600"
+                      : "w-1.5 bg-neutral-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() =>
+                scrollToSlide(Math.min(filteredItems.length - 1, activeSlide + 1))
+              }
+              disabled={activeSlide === filteredItems.length - 1}
+              className="p-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Skills Cards Grid (hidden sm:grid) */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-4"
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
