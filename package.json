@@ -6,7 +6,7 @@
     "v2"
   ],
   "scripts": {
-    "build": "npm run build --workspace=v2",
+    "build": "npm run build --workspace=v2 && (cp -r v2/out ./out || true)",
     "start": "npm run start --workspace=v2",
     "dev": "npm run dev --workspace=v2"
   }
