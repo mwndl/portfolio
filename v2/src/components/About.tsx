@@ -42,8 +42,9 @@ export const About: React.FC<AboutProps> = ({ onOpenContact }) => {
               fill
               sizes="(max-width: 640px) 112px, 128px"
               priority
+              draggable={false}
               onError={() => setAvatarSrc("/avatar.jpg")}
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-cover group-hover:scale-105 transition-transform duration-300 select-none pointer-events-none"
             />
           </div>
         </motion.div>
@@ -82,8 +83,9 @@ export const About: React.FC<AboutProps> = ({ onOpenContact }) => {
               src={avatarSrc}
               alt=""
               fill
+              draggable={false}
               onError={() => setAvatarSrc("/avatar.jpg")}
-              className="object-cover"
+              className="object-cover select-none pointer-events-none"
             />
           </div>
 
