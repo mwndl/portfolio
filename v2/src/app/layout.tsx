@@ -4,9 +4,9 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Marcos Wiendl — Full Stack Developer",
+  title: "Marcos Wiendl — Engenheiro de Software",
   description:
-    "Portfólio de Marcos Wiendl. Desenvolvedor Full Stack especializado em Java, Spring Boot, React, Next.js e TypeScript.",
+    "Portfólio de Marcos Wiendl. Engenheiro de Software especializado em Java, Spring Boot, React, Next.js e TypeScript.",
 };
 
 export default function RootLayout({

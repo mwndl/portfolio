@@ -96,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               className="object-cover group-hover:scale-110 transition-transform"
             />
           </div>
-          <span className="hidden md:inline-block text-sm font-semibold tracking-tight whitespace-nowrap">
+          <span className="inline-block text-xs sm:text-sm font-semibold tracking-tight whitespace-nowrap">
             Marcos Wiendl
           </span>
         </button>
