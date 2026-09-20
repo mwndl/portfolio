@@ -24,6 +24,8 @@ export interface Translation {
   skills: {
     title: string;
     subtitle: string;
+    showMore: string;
+    showLess: string;
     categories: {
       all: string;
       languages: string;
@@ -110,6 +112,8 @@ export const translations: Record<"pt" | "en", Translation> = {
       title: "Habilidades & Tecnologias",
       subtitle:
         "Ferramentas e ecossistemas que utilizo para projetar e construir aplicações modernas e escaláveis.",
+      showMore: "Ver mais",
+      showLess: "Ver menos",
       categories: {
         all: "Todas",
         languages: "Linguagens",
@@ -382,6 +386,8 @@ export const translations: Record<"pt" | "en", Translation> = {
       title: "Skills & Technologies",
       subtitle:
         "Tools and tech stacks I utilize to design and engineer modern, scalable applications.",
+      showMore: "Show more",
+      showLess: "Show less",
       categories: {
         all: "All",
         languages: "Languages",

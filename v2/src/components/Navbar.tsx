@@ -62,14 +62,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={appleSnappySpring}
-        className="glass-dock squircle px-2.5 sm:px-3.5 py-1.5 sm:py-2 flex items-center gap-2 sm:gap-4 pointer-events-auto transition-all duration-300 max-w-full"
+        className="glass-dock squircle px-2 sm:px-3.5 py-1.5 sm:py-2 flex items-center gap-1.5 sm:gap-3 md:gap-4 pointer-events-auto transition-all duration-300 max-w-[calc(100vw-1rem)] overflow-x-auto scrollbar-none shrink-0"
       >
         {/* Brand Gravatar Badge */}
         <button
           onClick={() => scrollToSection("about")}
-          className="flex items-center gap-2 font-bold tracking-tight text-[#1d1d1f] px-1 cursor-pointer group shrink-0"
+          className="flex items-center gap-1.5 font-bold tracking-tight text-[#1d1d1f] px-0.5 cursor-pointer group shrink-0"
         >
-          <div className="relative w-7 h-7 rounded-full overflow-hidden ring-1 ring-neutral-300 shrink-0">
+          <div className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden ring-1 ring-neutral-300 shrink-0">
             <Image
               src={navAvatar}
               alt="Marcos Wiendl"
@@ -79,22 +79,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               className="object-cover group-hover:scale-110 transition-transform"
             />
           </div>
-          <span className="hidden md:inline-block text-sm font-semibold tracking-tight">
+          <span className="hidden md:inline-block text-sm font-semibold tracking-tight whitespace-nowrap">
             Marcos Wiendl
           </span>
         </button>
 
-        <div className="h-4 w-[1px] bg-neutral-300/60 hidden md:block" />
+        <div className="h-4 w-[1px] bg-neutral-300/60 hidden md:block shrink-0" />
 
         {/* Nav Items */}
-        <div className="flex items-center gap-0.5 sm:gap-1">
+        <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="relative px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold rounded-full transition-colors cursor-pointer text-neutral-600 hover:text-neutral-900 shrink-0"
+                className="relative px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold rounded-full transition-colors cursor-pointer text-neutral-600 hover:text-neutral-900 shrink-0 whitespace-nowrap"
               >
                 {isActive && (
                   <motion.div
@@ -112,16 +112,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
         <div className="h-4 w-[1px] bg-neutral-300/60 shrink-0" />
 
         {/* Controls & Contact */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           <LanguageToggle />
           <SpringButton
             variant="primary"
             size="sm"
             onClick={onOpenContact}
-            className="ml-0.5 px-2.5 sm:px-3 py-1.5 flex items-center gap-1.5"
+            className="ml-0.5 px-2 sm:px-3 py-1.5 flex items-center gap-1.5 shrink-0"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">{t.nav.contact}</span>
+            <span className="hidden sm:inline whitespace-nowrap">{t.nav.contact}</span>
           </SpringButton>
         </div>
       </motion.nav>

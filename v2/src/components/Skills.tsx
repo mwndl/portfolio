@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { SegmentedControl, Option } from "./SegmentedControl";
 import { appleElementSpring, appleSheetSpring } from "@/lib/appleSprings";
+import { SpringButton } from "./SpringButton";
 import {
   Code,
   Layers,
@@ -20,8 +21,8 @@ import {
   Sparkles,
   MessageSquare,
   X,
-  ChevronLeft,
-  ChevronRight,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 type CategoryFilter = "all" | "languages" | "frameworks" | "devops" | "security_ai";
@@ -30,8 +31,15 @@ export const Skills: React.FC = () => {
   const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
   const [selectedSkill, setSelectedSkill] = useState<(typeof t.skills.items)[0] | null>(null);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const filterOptions: Option<CategoryFilter>[] = [
     { id: "all", label: t.skills.categories.all },
@@ -46,31 +54,13 @@ export const Skills: React.FC = () => {
     return item.category === activeCategory;
   });
 
-  // Reset scroll position when category changes
-  useEffect(() => {
-    setActiveSlide(0);
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
-    }
-  }, [activeCategory]);
+  const limit = isMobile ? 5 : 12;
+  const visibleItems = isExpanded ? filteredItems : filteredItems.slice(0, limit);
+  const hasMore = filteredItems.length > limit;
 
-  const handleScroll = () => {
-    if (!scrollContainerRef.current) return;
-    const { scrollLeft, clientWidth } = scrollContainerRef.current;
-    if (clientWidth > 0) {
-      const newIndex = Math.round(scrollLeft / (clientWidth * 0.75));
-      setActiveSlide(Math.min(Math.max(0, newIndex), filteredItems.length - 1));
-    }
-  };
-
-  const scrollToSlide = (index: number) => {
-    if (!scrollContainerRef.current) return;
-    const cardWidth = scrollContainerRef.current.clientWidth * 0.78;
-    scrollContainerRef.current.scrollTo({
-      left: index * cardWidth,
-      behavior: "smooth",
-    });
-    setActiveSlide(index);
+  const handleCategoryChange = (category: CategoryFilter) => {
+    setActiveCategory(category);
+    setIsExpanded(false);
   };
 
   const getIcon = (iconName: string) => {
@@ -128,100 +118,22 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Category Segmented Control */}
-        <div className="flex justify-center overflow-x-auto max-w-full pb-2 no-scrollbar">
+        <div className="flex justify-center overflow-x-auto max-w-full pb-2 scrollbar-none">
           <SegmentedControl
             layoutId="skills-category-pill"
             options={filterOptions}
             value={activeCategory}
-            onChange={(val) => setActiveCategory(val)}
+            onChange={handleCategoryChange}
           />
         </div>
 
-        {/* Mobile Touch Swiper Carousel (sm:hidden) */}
-        <div className="block sm:hidden space-y-3">
-          <div className="relative">
-            <div
-              ref={scrollContainerRef}
-              onScroll={handleScroll}
-              className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-4 pt-1 px-1 scrollbar-none scroll-smooth"
-            >
-              <AnimatePresence mode="popLayout">
-                {filteredItems.map((item, idx) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={appleElementSpring}
-                    onClick={() => setSelectedSkill(item)}
-                    className="snap-center shrink-0 w-[78vw] max-w-[270px] glass-panel squircle p-5 cursor-pointer flex flex-col justify-between space-y-3 shadow-md border border-neutral-200/90 select-none active:scale-95 transition-transform"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="p-2.5 rounded-2xl bg-neutral-100/90 border border-neutral-200/50">
-                        {getIcon(item.icon)}
-                      </div>
-                      <span className="text-[10px] font-semibold tracking-wide text-neutral-400 uppercase">
-                        {item.category}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="apple-title-md text-[#1d1d1f]">
-                        {item.name}
-                      </h3>
-                      <p className="text-xs text-neutral-500 line-clamp-2 mt-1 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* Carousel Pagination Dots & Navigation Controls */}
-          <div className="flex items-center justify-between px-2 pt-1">
-            <button
-              onClick={() => scrollToSlide(Math.max(0, activeSlide - 1))}
-              disabled={activeSlide === 0}
-              className="p-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-
-            <div className="flex items-center gap-1.5">
-              {filteredItems.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => scrollToSlide(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    activeSlide === idx
-                      ? "w-4 bg-blue-600"
-                      : "w-1.5 bg-neutral-300"
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={() =>
-                scrollToSlide(Math.min(filteredItems.length - 1, activeSlide + 1))
-              }
-              disabled={activeSlide === filteredItems.length - 1}
-              className="p-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Desktop Skills Cards Grid (hidden sm:grid) */}
+        {/* Skills Cards Grid */}
         <motion.div
           layout
-          className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           <AnimatePresence mode="popLayout">
-            {filteredItems.map((item) => (
+            {visibleItems.map((item) => (
               <motion.div
                 key={item.name}
                 layout
@@ -252,6 +164,25 @@ export const Skills: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Ver Mais / Ver Menos Button */}
+        {hasMore && (
+          <div className="flex justify-center pt-2">
+            <SpringButton
+              variant="glass"
+              size="md"
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="px-6 py-2.5 flex items-center gap-2 font-semibold text-xs text-neutral-800 border border-neutral-300/80 bg-neutral-100/90 hover:bg-neutral-200/90 shadow-xs"
+            >
+              <span>{isExpanded ? t.skills.showLess : t.skills.showMore}</span>
+              {isExpanded ? (
+                <ChevronUp className="w-4 h-4 text-neutral-600" />
+              ) : (
+                <ChevronDown className="w-4 h-4 text-neutral-600" />
+              )}
+            </SpringButton>
+          </div>
+        )}
       </div>
 
       {/* Skill Detail Popover Sheet Modal */}
