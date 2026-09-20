@@ -96,7 +96,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       subtitle1:
         "Engenheiro de Software com experiência na criação de soluções digitais de alto impacto, unindo interfaces fluidas e intuitivas a arquiteturas back-end robustas.",
       subtitle2:
-        "Formado em Sistemas para Internet com MBA concluído em Full Stack Web Development. Focado em qualidade de código, performance e experiência do usuário inspirada nas melhores práticas globais.",
+        "Formado em Sistemas para Internet com MBA em Full Stack Web Development. Focado em qualidade de código, performance e experiência do usuário inspirada nas melhores práticas globais.",
       resume: "Ver Currículo",
       contactBtn: "Falar Comigo",
       resumeUrl:
@@ -370,7 +370,7 @@ export const translations: Record<"pt" | "en", Translation> = {
       subtitle1:
         "Software Engineer experienced in creating high-impact digital solutions, bridging fluid intuitive interfaces with robust backend architectures.",
       subtitle2:
-        "Degree in Internet Systems with completed MBA in Full Stack Web Development. Focused on code quality, performance, and user experience inspired by global best practices.",
+        "Degree in Internet Systems and MBA in Full Stack Web Development. Focused on code quality, performance, and user experience inspired by global best practices.",
       resume: "View Resume",
       contactBtn: "Get in Touch",
       resumeUrl:
