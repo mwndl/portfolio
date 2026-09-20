@@ -113,7 +113,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
         {/* Controls & Contact */}
         <div className="flex items-center gap-1 sm:gap-2 shrink-0">
-          <LanguageToggle />
+          <div className="hidden sm:block">
+            <LanguageToggle />
+          </div>
           <SpringButton
             variant="primary"
             size="sm"
