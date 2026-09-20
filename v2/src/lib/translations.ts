@@ -90,11 +90,11 @@ export const translations: Record<"pt" | "en", Translation> = {
       contact: "Contato",
     },
     hero: {
-      role: "Desenvolvedor Full Stack",
+      role: "Engenheiro de Software",
       badge: "Disponível para novos projetos",
       title: "Marcos Wiendl",
       subtitle1:
-        "Desenvolvedor Full Stack com experiência na criação de soluções digitais de alto impacto, unindo interfaces fluidas e intuitivas a arquiteturas back-end robustas.",
+        "Engenheiro de Software com experiência na criação de soluções digitais de alto impacto, unindo interfaces fluidas e intuitivas a arquiteturas back-end robustas.",
       subtitle2:
         "Formado em Sistemas para Internet e cursando MBA em Full Stack Web Development. Focado em qualidade de código, performance e experiência do usuário inspirada nas melhores práticas globais.",
       resume: "Ver Currículo",
@@ -364,11 +364,11 @@ export const translations: Record<"pt" | "en", Translation> = {
       contact: "Contact",
     },
     hero: {
-      role: "Full Stack Developer",
+      role: "Software Engineer",
       badge: "Available for new opportunities",
       title: "Marcos Wiendl",
       subtitle1:
-        "Full Stack Developer experienced in creating high-impact digital solutions, bridging fluid intuitive interfaces with robust backend architectures.",
+        "Software Engineer experienced in creating high-impact digital solutions, bridging fluid intuitive interfaces with robust backend architectures.",
       subtitle2:
         "Degree in Internet Systems and currently pursuing an MBA in Full Stack Web Development. Focused on code quality, performance, and user experience inspired by global best practices.",
       resume: "View Resume",
